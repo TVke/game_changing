@@ -89,6 +89,10 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                @foreach($card in cards)
+                    {{$card}}
+                @endforeach
             </div>
         </div>
     </body>
