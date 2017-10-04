@@ -21,7 +21,6 @@ class GameController extends Controller
     }
 
     public function play() {
-
         //Game::with('card')->get();
         return view('play');
     }
