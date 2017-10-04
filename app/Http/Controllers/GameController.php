@@ -8,18 +8,21 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-    function search(Request $request){
-    	return $request;
-    }
-
-    public function index(){
+	public function index(){
 
         $games = Game::limit(5)->get();
         return view('overzicht', compact('games'));
     }
 
-    public function test(){
+    public function search(Request $request){
 
-        return Card::with('game')->get();
+    	$games = Game::where('name', 'like', '%' . $request['search'] . '%')->get();
+    	return view('overzicht', compact('games'));
+    }
+
+    public function play() {
+
+        //Game::with('card')->get();
+        return view('play');
     }
 }

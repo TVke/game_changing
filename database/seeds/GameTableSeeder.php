@@ -13,7 +13,9 @@ class GameTableSeeder extends Seeder
     {
 	    DB::table('games')->insert([
 		    ['name'=>'Memorie','discription'=>'Draai twee dezelfde kaartjes om een paar te verkrijgen. Verzamel zoveel mogelijk paren om het spel te winnen','picture'=>'memorie.jpeg',],
-            ['name'=>'Placeholder','discription'=>'Placeholden tekst','picture'=>'memorie.jpeg',],
+            ['name'=>'Vier op een rij','discription'=>'Probeer 4 op een rij te krijgen','picture'=>'memorie.jpeg',],
+            ['name'=>'Monopoly','discription'=>'Verdien het meeste geld en koop de meeste gronden.','picture'=>'memorie.jpeg',],
+            ['name'=>'Dammen','discription'=>'Versla je tegenstander in een potje dammen.','picture'=>'memorie.jpeg',],
 	    ]);
     }
 }
