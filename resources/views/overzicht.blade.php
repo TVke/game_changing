@@ -11,7 +11,7 @@
 	</h1>
 	<ul>
 		@foreach($games as $game)
-			<li>{{ $game->name }}<br>{{ $game->discription }}</li>
+			<li><a href="{{ route('play', ['game'=>$game->name]) }}">{{ $game->name }}</a><br>{{ $game->discription }}</li>
 			@endforeach
 	</ul>
 	<footer>
