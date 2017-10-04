@@ -13,6 +13,7 @@ class GameTableSeeder extends Seeder
     {
 	    DB::table('games')->insert([
 		    ['name'=>'Memorie','discription'=>'Draai twee dezelfde kaartjes om een paar te verkrijgen. Verzamel zoveel mogelijk paren om het spel te winnen','picture'=>'memorie.jpeg',],
+            ['name'=>'Placeholder','discription'=>'Placeholden tekst','picture'=>'memorie.jpeg',],
 	    ]);
     }
 }

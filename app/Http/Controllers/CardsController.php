@@ -13,7 +13,8 @@ class CardsController extends Controller
      */
     public function index()
     {
-        return view('overzicht');
+        $cards = Card::limit(5)->get();
+        return view('overzicht', compact('cards'));
     }
 
     /**

@@ -15,4 +15,4 @@
 	<footer>
 		&copy; GAMEchanging 2017
 	</footer>
-	@endsection
+@endsection
