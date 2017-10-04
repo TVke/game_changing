@@ -2,7 +2,7 @@
 
 namespace GAMEchanging\Http\Controllers;
 
-use GAMEchanging\Card;
+use GAMEchanging\Game;
 use Illuminate\Http\Request;
 
 class CardsController extends Controller
@@ -12,10 +12,10 @@ class CardsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
 
-        $cards = Card::limit(5)->get();
-        return view('overzicht', compact('cards'));
+        //
     }
 
     /**

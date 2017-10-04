@@ -10,8 +10,8 @@
 		<span>changing</span>
 	</h1>
 	<ul>
-		@foreach($cards as $card)
-			<li>{{ $card->title }}</li>
+		@foreach($games as $game)
+			<li>{{ $game->name }}<br>{{ $game->discription }}</li>
 			@endforeach
 	</ul>
 	<footer>
