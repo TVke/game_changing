@@ -1,4 +1,4 @@
 @extends('layout')
 @section('content')
-	<p>overzicht</p>
+	<p>{{cards}}</p>
 	@endsection
