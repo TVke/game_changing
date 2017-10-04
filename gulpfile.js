@@ -7,7 +7,7 @@ var uglify = require('gulp-uglify');
 var imageOptim = require('gulp-imageoptim2');
 
 gulp.task('default', ['sass','js','image']);
-gulp.task('watch', ['sass:watch','image:watch','js:watch']);
+gulp.task('watch', ['sass:watch','js:watch']);
 
 /*
  *
@@ -17,6 +17,7 @@ gulp.task('watch', ['sass:watch','image:watch','js:watch']);
 gulp.task('sass', function () {
 	return gulp.src('resources/assets/scss/*.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer())
 		.pipe(gulp.dest('public/css'));
 });
 gulp.task('sass:watch', function () {
@@ -48,7 +49,7 @@ gulp.task('js:watch', function () {
 
 gulp.task('image', function () {
 	return gulp.src('resources/assets/img/**/*')
-		.pipe(imageOptim.optimize())
+		// .pipe(imageOptim.optimize())
 		.pipe(gulp.dest('public/img'));
 });
 gulp.task('image:watch', function () {

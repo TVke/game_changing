@@ -5,7 +5,11 @@
 }
 
 body{
+	background: $background-color;
+
 	h1{
+		color: darken($background-color,10%);
+		text-shadow: -1px -1px 1px darken($background-color,20%);
 		p{
 			font-family: $pixel-font;
 		}
@@ -13,7 +17,5 @@ body{
 			font-family: $writen-font;
 		}
 	}
-
-	background: url("/img/Large_FK-744.jpg");
 }
 

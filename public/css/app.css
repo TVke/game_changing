@@ -4,8 +4,11 @@
   padding: 0; }
 
 body {
-  background: url("/img/Large_FK-744.jpg"); }
-  body h1 p {
-    font-family: "Press Start 2P", sans-serif; }
-  body h1 span {
-    font-family: "Sacramento", sans-serif; }
+  background: #2B542C; }
+  body h1 {
+    color: #1a321a;
+    text-shadow: -1px -1px 1px #081109; }
+    body h1 p {
+      font-family: "Press Start 2P", sans-serif; }
+    body h1 span {
+      font-family: "Sacramento", sans-serif; }
