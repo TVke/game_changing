@@ -11,6 +11,8 @@ class CardTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+	    DB::table('cards')->insert([
+	    	['title'=>'Shuffle','discription'=>'haal alle prentjes door elkaar en speel verder.','FK_game'=>'1',],
+	    ]);
     }
 }
