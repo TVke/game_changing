@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', 'CardsController@index')->name('overzicht');
+Route::get('/', 'GameController@index')->name('overzicht');
 Route::post('/zoek', 'GameController@search')->name('search');
 
 Route::get('/game/{game}', 'GameController@play')->name('play');
+
+Route::get('/test', 'GameController@test');
 
 
 
