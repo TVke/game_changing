@@ -1,27 +1,26 @@
 'use strict';
 const gulp = require('gulp');
-const scss = require('gulp-scss');
+const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const pump = require('pump');
 var uglify = require('gulp-uglify');
 var imageOptim = require('gulp-imageoptim2');
 
-gulp.task('default', ['scss','js','image','font']);
-gulp.task('watch', ['scss:watch','image:watch','js:watch','font:watch']);
+gulp.task('default', ['sass','js','image','font']);
+gulp.task('watch', ['sass:watch','image:watch','js:watch','font:watch']);
 
 /*
  *
  * SASS
  *
  */
-gulp.task('scss', function () {
-	gulp.src('resources/assets/scss/*.scss')
-		.pipe(scss({"bundleExec": true}))
-		.pipe(autoprefixer())
+gulp.task('sass', function () {
+	return gulp.src('resources/assets/scss/*.scss')
+		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('public/css'));
 });
-gulp.task('scss:watch', function () {
-	gulp.watch('resources/assets/scss/*.scss', ['scss']);
+gulp.task('sass:watch', function () {
+	gulp.watch('resources/assets/scss/*.scss', ['sass']);
 });
 
 /*

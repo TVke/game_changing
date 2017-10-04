@@ -4,7 +4,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-imageoptim2": "^1.0.10",
-    "gulp-scss": "^1.4.0",
+    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "pump": "^1.0.2"
   }
