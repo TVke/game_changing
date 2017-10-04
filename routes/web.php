@@ -11,4 +11,10 @@
 |
 */
 
-Route::get('/', 'CardsController@index');
+Route::get('/', 'CardsController@index')->name('overzicht');
+Route::post('/zoek', 'GameController@search')->name('search');
+
+Route::get('/game/{game}', 'GameController@play')->name('play');
+
+
+
