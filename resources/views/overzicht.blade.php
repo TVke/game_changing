@@ -10,7 +10,9 @@
 		<span>changing</span>
 	</h1>
 	<ul>
-		<li>memorie</li>
+		@foreach($cards as $card)
+			<li>{{ $card->title }}</li>
+			@endforeach
 	</ul>
 	<footer>
 		&copy; GAMEchanging 2017
