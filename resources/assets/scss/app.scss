@@ -37,12 +37,14 @@ body{
 			flex: 1;
 			font-size: 1em;
 			padding: 7px 10px;
+			border: none;
+			border-radius: 0;
 		}
 
 		input[type=submit]{
 			flex: 0;
-			background: linear-gradient($accent-background,$accent-background);
 			background: $accent-background;
+			background: linear-gradient($accent-background,$accent-background);
 			border-radius: 0;
 			border: none;
 			color: $accent-color;
@@ -166,6 +168,14 @@ body{
 			&:hover,&.hover{
 				background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
 				background: lighten($accent-background,5%);
+			}
+		}
+
+		dialog{
+			display: none;
+
+			&.show{
+				display: block;
 			}
 		}
 	}

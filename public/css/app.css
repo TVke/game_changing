@@ -32,14 +32,16 @@ body {
           -ms-flex: 1;
               flex: 1;
       font-size: 1em;
-      padding: 7px 10px; }
+      padding: 7px 10px;
+      border: none;
+      border-radius: 0; }
     body form input[type=submit] {
       -webkit-box-flex: 0;
           -ms-flex: 0;
               flex: 0;
+      background: #1057A1;
       background: -webkit-gradient(linear, left top, left bottom, from(#1057A1), to(#1057A1));
       background: linear-gradient(#1057A1, #1057A1);
-      background: #1057A1;
       border-radius: 0;
       border: none;
       color: white;
@@ -132,3 +134,7 @@ body {
       background: -webkit-gradient(linear, left top, left bottom, from(#1264b8), to(#1264b8));
       background: linear-gradient(#1264b8, #1264b8);
       background: #1264b8; }
+  body main dialog {
+    display: none; }
+    body main dialog.show {
+      display: block; }
