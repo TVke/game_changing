@@ -5,7 +5,7 @@
 		<title>GAMEchanging</title>
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name = "viewport" content = "width = device-width">
-		<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+		<link rel="stylesheet" href="{{ asset('/css/app.css') }}?v=1">
 	</head>
 	<body>
 	@yield('content')

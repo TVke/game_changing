@@ -12,5 +12,10 @@
 	<main>
 		<span id="countDown" data-max="120">120</span>
 		<button>Pauze</button>
+
+		<dialog>
+			<h2>Speel verder</h2>
+			<p>Speel rustig verder. En geniet van het originele spel.</p>
+		</dialog>
 	</main>
 @endsection
