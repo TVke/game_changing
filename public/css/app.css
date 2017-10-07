@@ -46,7 +46,7 @@ body {
       border: none;
       color: white;
       padding: 10px 20px 13px; }
-      body form input[type=submit]:hover, body form input[type=submit].hover {
+      body form input[type=submit]:hover {
         background: -webkit-gradient(linear, left top, left bottom, from(#1264b8), to(#1264b8));
         background: linear-gradient(#1264b8, #1264b8);
         background: #1264b8; }
@@ -67,21 +67,14 @@ body {
         content: "speel";
         display: block;
         background: #1057A1;
-        background: repeating-linear-gradient(-30deg, #1057A1, #1057A1 4px, #2d8aea 4px, #2d8aea 8px);
-        color: transparent;
+        color: white;
         padding: 10px;
         text-align: center;
         font-family: "Press Start 2P", sans-serif;
         -webkit-transition: all .5s ease;
         transition: all .5s ease;
         -webkit-transform-origin: center bottom;
-                transform-origin: center bottom;
-        -webkit-transform: scaleY(0.2);
-                transform: scaleY(0.2); }
-      body ul li a:hover::after, body ul li a.hover::after {
-        -webkit-transform: scaleY(1);
-                transform: scaleY(1);
-        color: white; }
+                transform-origin: center bottom; }
   body footer {
     font-size: 0.8em;
     color: #5a5a5a;
@@ -130,7 +123,7 @@ body {
     display: block;
     color: white;
     padding: 10px 40px 13px; }
-    body main button:hover, body main button.hover {
+    body main button:hover {
       background: -webkit-gradient(linear, left top, left bottom, from(#1264b8), to(#1264b8));
       background: linear-gradient(#1264b8, #1264b8);
       background: #1264b8; }

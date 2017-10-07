@@ -6,7 +6,7 @@ const pump = require('pump');
 var uglify = require('gulp-uglify');
 var imageOptim = require('gulp-imageoptim2');
 
-gulp.task('default', ['sass','js','image']);
+gulp.task('default', ['sass','js','image','favicons']);
 gulp.task('watch', ['sass:watch','js:watch']);
 
 /*
@@ -49,9 +49,21 @@ gulp.task('js:watch', function () {
 
 gulp.task('image', function () {
 	return gulp.src('resources/assets/img/**/*')
-		// .pipe(imageOptim.optimize())
+	// .pipe(imageOptim.optimize())
 		.pipe(gulp.dest('public/img'));
 });
 gulp.task('image:watch', function () {
 	gulp.watch('resources/assets/img/**/*', ['image']);
+});
+
+/*
+ *
+ * favicons
+ *
+ */
+
+gulp.task('favicons', function () {
+	return gulp.src('resources/assets/favicons/*')
+		// .pipe(imageOptim.optimize())
+		.pipe(gulp.dest('public'));
 });

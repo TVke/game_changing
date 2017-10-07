@@ -1,0 +1,1 @@
+window;for(var links=document.querySelectorAll("ul li a"),i=0,ilen=links.length;i<ilen;++i)!function(e){links[e].addEventListener("click",function(){event.preventDefault();var n=new XMLHttpRequest;n.onreadystatechange=function(){4===this.readyState&&200===this.status&&(document.body.innerHTML=n.responseText)},n.open("GET",links[e].href,!0),n.send()})}(i);
