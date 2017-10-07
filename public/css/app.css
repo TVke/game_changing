@@ -128,6 +128,36 @@ body {
       background: linear-gradient(#1264b8, #1264b8);
       background: #1264b8; }
   body main dialog {
-    display: none; }
-    body main dialog.show {
-      display: block; }
+    display: block;
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 70%;
+    max-width: 500px;
+    margin: 60px auto 60px;
+    border: 10px solid gainsboro;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 15px gray;
+            box-shadow: 0 0 15px gray;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0; }
+    body main dialog h2 {
+      padding: 20px;
+      background: #1057A1;
+      background: repeating-linear-gradient(-45deg, #1057A1, #1057A1 4px, #1264b8 4px, #1264b8 8px);
+      color: white;
+      margin-bottom: 10px; }
+    body main dialog p {
+      padding: 10px 20px; }
+  body.show {
+    background: dimgray; }
+    body.show dialog {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }

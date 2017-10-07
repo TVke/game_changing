@@ -24,6 +24,7 @@ function play(){
 		currentTime = countDown.dataset.max,
 		paused = false,
 		pauseButton = document.getElementsByTagName("button")[0],
+		card = document.getElementsByTagName("dialog")[0],
 
 		timer = setInterval(lower,1000);
 
@@ -41,6 +42,7 @@ function play(){
 				countDown.innerHTML = currentTime;
 			}else if(currentTime=0){
 				clearInterval(timer);
+				document.body.classList.add("show");
 			}
 		}
 	}

@@ -173,11 +173,47 @@ body{
 		}
 
 		dialog{
-			display: none;
+			display: block;
+			background:white;
+			position: absolute;
+			top:0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			width: 70%;
+			max-width: 500px;
+			margin: 60px auto 60px;
+			border: 10px solid gainsboro;
+			border-radius: 5px;
+			box-shadow: 0 0 15px gray;
+			transition: all .5s ease;
+			transform: translateY(100px);
+			opacity: 0;
 
-			&.show{
-				display: block;
+			h2{
+				padding: 20px;
+				background: $accent-background;
+				$stroke-width: 4px;
+				background: repeating-linear-gradient(-45deg
+				,$accent-background
+				,$accent-background $stroke-width
+				,lighten($accent-background,5%) $stroke-width
+				,lighten($accent-background,5%) $stroke-width*2);
+				color: $accent-color;
+				margin-bottom: 10px;
 			}
+			p{
+				padding: 10px 20px;
+			}
+		}
+	}
+
+	&.show{
+		background: dimgray;
+
+		dialog{
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 }
