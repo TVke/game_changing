@@ -50,10 +50,10 @@ body{
 			color: $accent-color;
 			padding:10px 20px 13px;
 
-			&:hover{
-				background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
-				background: lighten($accent-background,5%);
-			}
+			//&:hover{
+			//	background: lighten($accent-background,5%);
+			//	background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
+			//}
 		}
 	}
 
@@ -156,8 +156,8 @@ body{
 			}
 		}
 		button{
-			background: linear-gradient($accent-background,$accent-background);
 			background: $accent-background;
+			background: linear-gradient($accent-background,$accent-background);
 			border-radius: 0;
 			border: none;
 			font-size: 1.7em;
@@ -166,10 +166,10 @@ body{
 			color: $accent-color;
 			padding:10px 40px 13px;
 
-			&:hover{
-				background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
-				background: lighten($accent-background,5%);
-			}
+			//&:hover{
+			//	background: lighten($accent-background,5%);
+			//	background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
+			//}
 		}
 
 		.card{
