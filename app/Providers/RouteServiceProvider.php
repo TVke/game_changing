@@ -2,6 +2,7 @@
 
 namespace GAMEchanging\Providers;
 
+use GAMEchanging\Game;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -23,7 +24,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+	    Route::bind('game',function($name){
+		    return Game::where('name',$name)->firstOrFail();
+	    });
 
         parent::boot();
     }

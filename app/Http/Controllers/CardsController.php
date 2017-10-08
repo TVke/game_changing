@@ -2,11 +2,26 @@
 
 namespace GAMEchanging\Http\Controllers;
 
+use GAMEchanging\Card;
 use GAMEchanging\Game;
 use Illuminate\Http\Request;
 
 class CardsController extends Controller
 {
+	/**
+	 * fetches one random card.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function randomOne(Game $game)
+	{
+		//return $game;
+//		$shownCards = ; ->whereNotIn('id',$shownCards)
+		$chosenCard = Card::where("FK_game", $game->id)->inRandomOrder()->first();
+		return $chosenCard;
+		//return ;
+	}
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +29,7 @@ class CardsController extends Controller
      */
     public function index()
     {
-
-        //
+	    //
     }
 
     /**
