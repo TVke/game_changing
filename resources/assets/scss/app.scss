@@ -49,11 +49,6 @@ body{
 			border: none;
 			color: $accent-color;
 			padding:10px 20px 13px;
-
-			//&:hover{
-			//	background: lighten($accent-background,5%);
-			//	background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
-			//}
 		}
 	}
 
@@ -81,25 +76,13 @@ body{
 					content: "speel";
 					display: block;
 					background: $accent-background;
-					//$stroke-width: 4px;
-					//background: repeating-linear-gradient(-30deg
-					//,$accent-background
-					//,$accent-background $stroke-width
-					//,lighten($accent-background,20%) $stroke-width
-					//,lighten($accent-background,20%) $stroke-width*2);
-					//color: transparent;
 					color: $accent-color;
 					padding: 10px;
 					text-align: center;
 					font-family: $pixel-font;
 					transition: all .5s ease;
 					transform-origin: center bottom;
-					//transform: scaleY(0.2);
 				}
-				//&:hover::after{
-				//	transform: scaleY(1);
-				//	color: $accent-color;
-				//}
 			}
 		}
 	}
@@ -165,11 +148,6 @@ body{
 			display: block;
 			color: $accent-color;
 			padding:10px 40px 13px;
-
-			//&:hover{
-			//	background: lighten($accent-background,5%);
-			//	background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
-			//}
 		}
 
 		.card{
