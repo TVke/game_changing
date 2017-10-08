@@ -2,7 +2,7 @@
 @section('content')
 	<form action="{{ route('search') }}" method="post">
 		{{ csrf_field() }}
-		<input name="search" placeholder="memorie">
+		<input name="search" placeholder="memorie" value="{{ request('search') }}">
 		<input type="submit" value="zoek">
 	</form>
 	<h1>
