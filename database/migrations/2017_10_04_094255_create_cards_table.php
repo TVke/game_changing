@@ -16,7 +16,7 @@ class CreateCardsTable extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('discription');
+            $table->string('description');
             $table->integer('FK_game')->unsigned();
             $table->timestamps();
 
