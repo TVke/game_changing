@@ -10,7 +10,7 @@
 	</h1>
 </header>
 <main>
-	<span id="countDown" data-max="10">120</span>
+	<span id="countDown" data-max="{{ $randomTime }}">{{ $randomTime }}</span>
 	<button id="pause">pauze</button>
 
 	<div class="card">
