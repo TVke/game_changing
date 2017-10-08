@@ -16,6 +16,8 @@ Route::post('/', 'GameController@search')->name('search');
 
 Route::get('/game/{game}', 'GameController@play')->name('play');
 
+Route::get('/new/card/{game}', 'CardsController@randomOne');
+
 Route::get('/test', 'GameController@test');
 
 

@@ -127,37 +127,59 @@ body {
       background: -webkit-gradient(linear, left top, left bottom, from(#1264b8), to(#1264b8));
       background: linear-gradient(#1264b8, #1264b8);
       background: #1264b8; }
-  body main dialog {
-    display: block;
-    background: white;
+  body main .card {
+    opacity: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    pointer-events: none;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    width: 70%;
-    max-width: 500px;
-    margin: 60px auto 60px;
-    border: 10px solid gainsboro;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 0 15px gray;
-            box-shadow: 0 0 15px gray;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-    opacity: 0; }
-    body main dialog h2 {
-      padding: 20px;
-      background: #1057A1;
-      background: repeating-linear-gradient(-45deg, #1057A1, #1057A1 4px, #1264b8 4px, #1264b8 8px);
-      color: white;
-      margin-bottom: 10px; }
-    body main dialog p {
-      padding: 10px 20px; }
-  body.show {
     background: dimgray; }
-    body.show dialog {
+    body main .card dialog {
+      display: block;
+      background: white;
+      width: 70%;
+      max-width: 500px;
+      margin: 50px auto 0;
+      border: 10px solid gainsboro;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 0 15px gray;
+              box-shadow: 0 0 15px gray;
+      position: absolute;
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease;
+      -webkit-transform: translateY(-50px);
+              transform: translateY(-50px);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 115px; }
+      body main .card dialog h2 {
+        padding: 20px;
+        background: #1057A1;
+        background: repeating-linear-gradient(-45deg, #1057A1, #1057A1 4px, #1264b8 4px, #1264b8 8px);
+        color: white;
+        margin-bottom: 10px; }
+      body main .card dialog p {
+        padding: 10px 20px; }
+    body main .card button {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      max-width: 520px;
+      width: 70%;
+      width: calc(70% + 20px);
+      right: 0;
+      left: 0;
+      margin: 30px auto;
+      padding-left: 50px;
+      padding-right: 50px; }
+    body main .card.show {
       opacity: 1;
-      -webkit-transform: translateY(0);
-              transform: translateY(0); }
+      pointer-events: auto; }
+      body main .card.show dialog {
+        -webkit-transform: translateY(0);
+                transform: translateY(0); }
