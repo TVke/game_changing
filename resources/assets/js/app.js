@@ -23,9 +23,10 @@ function play(game){
 	var countDown = document.getElementById("countDown"),
 		currentTime = parseInt(countDown.dataset.max),
 		paused = false,
-		pauseButton = document.getElementsByTagName("button")[0],
+		pauseButton = document.getElementById("pause"),
 		card = document.getElementsByClassName("card")[0],
 		cardContent = document.getElementsByTagName("dialog")[0],
+		readButton = document.getElementById("read"),
 		timer;
 
 	startTimer();
@@ -45,6 +46,10 @@ function play(game){
 			}else if(currentTime === 0){
 				clearInterval(timer);
 				card.classList.add("show");
+				readButton.addEventListener("click",function(){
+					addnextTime(getRandomNumbreBetween(120, 60));
+					card.classList.remove("show");
+				});
 			}
 		}
 	}
@@ -58,7 +63,7 @@ function play(game){
 			if(this.readyState === 4 && this.status === 200){
 				var response = (xhttp.responseText)?JSON.parse(xhttp.responseText):null;
 				if (response){
-					fillCard(response.title,response.discription);
+					fillCard(response.title,response.description);
 				}
 			}};
 		xhttp.open("GET", "/new/card/" + game, true);
@@ -67,6 +72,19 @@ function play(game){
 	function fillCard(title,description){
 		cardContent.getElementsByTagName("h2")[0].innerHTML = title;
 		cardContent.getElementsByTagName("p")[0].innerHTML = description;
+	}
+	// function nextTime(){
+	//	    gets random time from server (not necessary)
+	// }
+
+	function getRandomNumbreBetween(min, max){
+		return Math.floor(Math.random() * (max - min) + 1) + min;
+	}
+	function addnextTime(seconds){
+		currentTime = seconds;
+		countDown.innerHTML = seconds;
+
+		startTimer();
 	}
 }
 
