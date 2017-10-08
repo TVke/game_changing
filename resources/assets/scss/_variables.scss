@@ -1,4 +1,4 @@
-@import "font";
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Sacramento');
 // fonts
 $pixel-font: 'Press Start 2P',sans-serif;
 $writen-font: 'Sacramento',sans-serif;
@@ -14,3 +14,6 @@ $light-blue: #83DCF3;
 $background-color: silver;//darken(green,10%);
 $accent-background: $blue;
 $accent-color: white;
+
+//	background: lighten($accent-background,5%);
+//	background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));

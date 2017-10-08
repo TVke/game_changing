@@ -64,6 +64,5 @@ gulp.task('image:watch', function () {
 
 gulp.task('favicons', function () {
 	return gulp.src('resources/assets/favicons/*')
-		// .pipe(imageOptim.optimize())
 		.pipe(gulp.dest('public'));
 });
