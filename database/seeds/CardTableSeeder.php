@@ -29,6 +29,17 @@ class CardTableSeeder extends Seeder
             ['title'=>'Verblind','discription'=>'Volgende beurt mag je tegenstander niet meekijken.','FK_game'=>'1',],
             ['title'=>'Dikke pech','discription'=>'In de volgende 2 beurten geen paar genomen? Geef dan een paar aan je tegenstander.','FK_game'=>'1',],
 
+            ['title'=>'2 voor de prijs van 1','discription'=>'Je mag twee schijven steken deze beurt.','FK_game'=>'2',],
+            ['title'=>'Geheugenverlies','discription'=>'Sla een beurt over.','FK_game'=>'2',],
+            ['title'=>'Delen?','discription'=>'Je mag de schijf van je tegenstander zijn beurt zelf plaatsen.','FK_game'=>'2',],
+            ['title'=>'Valsspelen','discription'=>'Als vier schuiven met dezelfde kleur in contact staan heb je gewonnen. Ze moeten niet in een rij staan.','FK_game'=>'2',],
+
+            ['title'=>'','discription'=>'','FK_game'=>'3',],
+
+            ['title'=>'','discription'=>'','FK_game'=>'4',],
+
+            ['title'=>'','discription'=>'','FK_game'=>'5',],
+
 	    ]);
     }
 }
