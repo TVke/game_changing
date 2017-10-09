@@ -40,13 +40,19 @@ class CardTableSeeder extends Seeder
             ['title'=>'Wisselen','description'=>'Wissel van kleur!','FK_game'=>'3',],
 
             #Monopoly
-            ['title'=>'','description'=>'','FK_game'=>'3',],
+            ['title'=>'Donatie','description'=>'Krijg 100 euro!','FK_game'=>'3',],
+            ['title'=>'Uitzetting','description'=>'Je mag een huis van je tegenstander nemen.','FK_game'=>'3',],
+            ['title'=>'Overslaan','description'=>'Sla een beurt over.','FK_game'=>'3',],
 
             #Dammen
-            ['title'=>'','description'=>'','FK_game'=>'4',],
+            ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van de tegenstander.','FK_game'=>'4',],
+            ['title'=>'Jouw beurt?','description'=>'Verplaats een schijf van de tegenstander.','FK_game'=>'4',],
+            ['title'=>'Overslaan','description'=>'Sla een beurt over.','FK_game'=>'4',],
 
             #Schaken
-            ['title'=>'','description'=>'','FK_game'=>'5',],
+            ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van je tegenstander.','FK_game'=>'5',],
+            ['title'=>'Jouw beurt?','description'=>'Verplaats een schijf van je tegenstander.','FK_game'=>'5',],
+            ['title'=>'Overslaan','description'=>'Sla een beurt over.','FK_game'=>'5',],
 
 	    ]);
     }
