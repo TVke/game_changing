@@ -8,12 +8,13 @@ $writen-font: 'Sacramento',sans-serif;
 $red: #F03C27;
 $orange: #FF9600;
 $green: #39C23E;
-$blue: #1057A1;
+$primary-color: #1057A1;
 $light-blue: #83DCF3;
 
 $background-color: silver;//darken(green,10%);
-$accent-background: $blue;
+$accent-background: $primary-color;
 $accent-color: white;
 
 //	background: lighten($accent-background,5%);
 //	background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
+
