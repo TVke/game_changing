@@ -12,6 +12,8 @@ class CardTableSeeder extends Seeder
     public function run()
     {
 	    DB::table('cards')->insert([
+
+            #Memorie
 	    	['title'=>'Shuffle','description'=>'Haal alle kaarten op het veld door elkaar.','FK_game'=>'1',],
             ['title'=>'Goed Doel','description'=>'De speler met de minste paren geeft 1 paar aan de tegenstander.','FK_game'=>'1',],
             ['title'=>'Overslaan','description'=>'Sla een beurt over.','FK_game'=>'1',],
@@ -28,6 +30,23 @@ class CardTableSeeder extends Seeder
             ['title'=>'Eerlijk delen','description'=>'Wissel de gevonden paren met elkaar.','FK_game'=>'1',],
             ['title'=>'Verblind','description'=>'Volgende beurt mag je tegenstander niet meekijken.','FK_game'=>'1',],
             ['title'=>'Dikke pech','description'=>'In de volgende 2 beurten geen paar genomen? Geef dan een paar aan je tegenstander.','FK_game'=>'1',],
+
+            #Vier op een rij
+            ['title'=>'2 voor de prijs van 1','description'=>'Je mag twee schijven steken deze beurt.','FK_game'=>'2',],
+            ['title'=>'Geheugenverlies','description'=>'Sla een beurt over.','FK_game'=>'2',],
+            ['title'=>'Delen?','description'=>'Je mag de schijf van je tegenstander zijn beurt zelf plaatsen.','FK_game'=>'2',],
+            ['title'=>'Valsspelen','description'=>'Als vier schuiven met dezelfde kleur in contact staan heb je gewonnen. Ze moeten niet in een rij staan.','FK_game'=>'2',],
+            ['title'=>'Tijd terugspoelen!','description'=>'Haal de laatst geplaatste schijf eruit.','FK_game'=>'3',],
+            ['title'=>'Wisselen','description'=>'Wissel van kleur!','FK_game'=>'3',],
+
+            #Monopoly
+            ['title'=>'','description'=>'','FK_game'=>'3',],
+
+            #Dammen
+            ['title'=>'','description'=>'','FK_game'=>'4',],
+
+            #Schaken
+            ['title'=>'','description'=>'','FK_game'=>'5',],
 
 	    ]);
     }
