@@ -46,10 +46,6 @@ body {
       border: none;
       color: white;
       padding: 10px 20px 13px; }
-      body form input[type=submit]:hover {
-        background: -webkit-gradient(linear, left top, left bottom, from(#1264b8), to(#1264b8));
-        background: linear-gradient(#1264b8, #1264b8);
-        background: #1264b8; }
   body ul {
     list-style: none; }
     body ul li a {
@@ -113,9 +109,9 @@ body {
       z-index: -1;
       border-radius: 50%; }
   body main button {
+    background: #1057A1;
     background: -webkit-gradient(linear, left top, left bottom, from(#1057A1), to(#1057A1));
     background: linear-gradient(#1057A1, #1057A1);
-    background: #1057A1;
     border-radius: 0;
     border: none;
     font-size: 1.7em;
@@ -123,10 +119,6 @@ body {
     display: block;
     color: white;
     padding: 10px 40px 13px; }
-    body main button:hover {
-      background: -webkit-gradient(linear, left top, left bottom, from(#1264b8), to(#1264b8));
-      background: linear-gradient(#1264b8, #1264b8);
-      background: #1264b8; }
   body main .card {
     opacity: 0;
     -webkit-transition: all .5s ease;

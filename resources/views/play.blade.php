@@ -10,15 +10,15 @@
 	</h1>
 </header>
 <main>
-	<span id="countDown" data-max="10">120</span>
-	<button>pauze</button>
+	<span id="countDown" data-max="{{ $randomTime }}">{{ $randomTime }}</span>
+	<button id="pause">pauze</button>
 
 	<div class="card">
 		<dialog>
 			<h2>Speel verder</h2>
 			<p>Speel rustig verder. En geniet van het originele spel.</p>
 		</dialog>
-		<button>gelezen</button>
+		<button id="read">gelezen</button>
 	</div>
 
 </main>

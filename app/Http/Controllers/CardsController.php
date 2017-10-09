@@ -15,11 +15,8 @@ class CardsController extends Controller
 	 */
 	public function randomOne(Game $game)
 	{
-		//return $game;
-//		$shownCards = ; ->whereNotIn('id',$shownCards)
 		$chosenCard = Card::where("FK_game", $game->id)->inRandomOrder()->first();
 		return $chosenCard;
-		//return ;
 	}
 
     /**

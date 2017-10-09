@@ -21,7 +21,7 @@ class GameController extends Controller
     }
 
     public function play() {
-        //Game::with('card')->get();
-        return view('play');
+	    $randomTime = rand(60,120);
+        return view('play',compact('randomTime'));
     }
 }
