@@ -4,15 +4,15 @@
 
 	for(var i=0,ilen=links.length;i<ilen;++i){
 		!function(i){
-			links[i].addEventListener('click',function(){
-				event.preventDefault();
+			links[i].addEventListener('click',function(e){
+				e.preventDefault();
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if(this.readyState === 4 && this.status === 200){
 						document.body.innerHTML=xhttp.responseText;
-						play(xhttp.responseURL.substr(window.location.href.length+5));
+						play(links[i].dataset.href.substr(window.location.href.length+5));
 					}};
-				xhttp.open("GET", links[i].href, true);
+				xhttp.open("GET", links[i].dataset.href, true);
 				xhttp.send();
 			});
 		}(i);
@@ -30,8 +30,8 @@
 		startTimer();
 		fetchNewCard();
 
-		pauseButton.addEventListener("click",function(){
-			event.preventDefault();
+		pauseButton.addEventListener("click",function(e){
+			e.preventDefault();
 			pauseButton.innerHTML = (!paused)?"speel verder":"pauze";
 			paused = (!paused);
 		});
