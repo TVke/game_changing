@@ -11,9 +11,18 @@ body{
 
 	h1{
 		text-align: center;
-		color: darken($background-color,10%);
-		text-shadow: -1px -1px 1px darken($background-color,20%), 1px 1px 1px lighten($background-color,10%);
+		$darken-logo: 30%;
+		color: darken($background-color,$darken);
+		text-shadow: -1px -1px 1px darken($background-color,$darken + 10%), 1px 1px 1px lighten($background-color,$lighten);
 		padding-top: 20px;
+		a{
+			color: inherit;
+			text-decoration: none;
+
+			&:hover{
+				color: darken($background-color,$darken + 3%);
+			}
+		}
 
 		p{
 			font-family: $pixel-font;
@@ -26,12 +35,13 @@ body{
 			bottom: 25px;
 			left: 22px;
 		}
+
 	}
 
 	form{
 		display: flex;
 		width: 100%;
-		margin: 30px 0 20px;
+		margin: 0px 0 20px;
 
 		input{
 			flex: 1;
@@ -48,7 +58,8 @@ body{
 			border-radius: 0;
 			border: none;
 			color: $accent-color;
-			padding:10px 20px 13px;
+			padding:10px 35px 13px;
+			font-size: 1.3em;
 		}
 	}
 
@@ -58,7 +69,7 @@ body{
 		li{
 
 			a{
-				display: block;
+				display: flex;
 				background: white;
 				border-radius: 3px;
 				text-decoration: none;
@@ -66,22 +77,20 @@ body{
 				margin: 0 10px 15px;
 
 				h2{
-					padding:15px 15px 5px;
+					padding:15px;
+					flex: 1;
 				}
-				p{
-					padding:5px 15px;
-				}
-
-				&::after{
-					content: "speel";
+				button{
 					display: block;
+					border: none;
 					background: $accent-background;
 					color: $accent-color;
 					padding: 10px;
-					text-align: center;
 					font-family: $pixel-font;
-					transition: all .5s ease;
-					transform-origin: center bottom;
+					font-size: 1em;
+					flex: 0;
+					border-radius: 0 3px 3px 0;
+					cursor: pointer;
 				}
 			}
 		}
@@ -103,7 +112,7 @@ body{
 			text-decoration: none;
 			padding:10px;
 			margin: 10px;
-			background: lighten($background-color,3%);
+			background: lighten($background-color,$lighten);
 
 			svg{
 				height: 10px;
@@ -111,7 +120,7 @@ body{
 			}
 		}
 		h1{
-			margin-top: 33px;
+			margin-top: 9px;
 		}
 	}
 	main{
@@ -148,6 +157,7 @@ body{
 			display: block;
 			color: $accent-color;
 			padding:10px 40px 13px;
+			cursor: pointer;
 		}
 
 		.card{
@@ -159,7 +169,7 @@ body{
 			bottom: 0;
 			right: 0;
 			left: 0;
-			background: dimgray;
+			background: darken($background-color,$darken);
 
 			dialog{
 				display: block;
@@ -169,7 +179,7 @@ body{
 				margin: 50px auto 0;
 				border: 10px solid gainsboro;
 				border-radius: 5px;
-				box-shadow: 0 0 15px gray;
+				box-shadow: 0 0 15px darken($background-color,$darken + 10%);
 				position: absolute;
 				transition: all .5s ease;
 				transform: translateY(-50px);
@@ -181,7 +191,6 @@ body{
 				h2{
 					padding: 20px;
 					background: $accent-background;
-					$stroke-width: 4px;
 					background: repeating-linear-gradient(-45deg
 					,$accent-background
 					,$accent-background $stroke-width
@@ -189,6 +198,23 @@ body{
 					,lighten($accent-background,5%) $stroke-width*2);
 					color: $accent-color;
 					margin-bottom: 10px;
+
+					&.var-good{
+						background: repeating-linear-gradient(-45deg
+						,$good-background
+						,$good-background $stroke-width
+						,lighten($good-background,5%) $stroke-width
+						,lighten($good-background,5%) $stroke-width*2);
+						color: $good-color;
+					}
+					&.var-bad{
+						background: repeating-linear-gradient(-45deg
+						,$bad-background
+						,$bad-background $stroke-width
+						,lighten($bad-background,5%) $stroke-width
+						,lighten($bad-background,5%) $stroke-width*2);
+						color: $bad-color;
+					}
 				}
 				p{
 					padding: 10px 20px;

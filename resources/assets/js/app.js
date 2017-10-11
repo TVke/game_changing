@@ -45,7 +45,7 @@
 					clearInterval(timer);
 					card.classList.add("show");
 					readButton.addEventListener("click",function(){
-						addnextTime(getRandomNumbreBetween(120, 60));
+						addnextTime(getRandomNumbreBetween(30, 60));
 						card.classList.remove("show");
 					});
 				}
@@ -81,6 +81,7 @@
 			currentTime = seconds;
 			countDown.innerHTML = seconds;
 			startTimer();
+			fetchNewCard();
 		}
 	}
 

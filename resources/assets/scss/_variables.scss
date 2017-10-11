@@ -4,17 +4,27 @@ $pixel-font: 'Press Start 2P',sans-serif;
 $writen-font: 'Sacramento',sans-serif;
 
 // colors
+$blue-light:#34B0C8;
+$orange:#F99159;
+$red: #F15F5C;
+$green: #ABED83;
+$yellow: #F3F5C4;
 
-$red: #F03C27;
-$orange: #FF9600;
-$green: #39C23E;
-$primary-color: #1057A1;
-$light-blue: #83DCF3;
+$dark-blue: #336699;
+$dark-red: #CC3333;
 
-$background-color: silver;//darken(green,10%);
-$accent-background: $primary-color;
+$background-color: $dark-blue;
+$accent-background: $dark-red;
 $accent-color: white;
 
-//	background: lighten($accent-background,5%);
-//	background: linear-gradient(lighten($accent-background,5%),lighten($accent-background,5%));
+// color tweeks
+$darken: 20%;
+$lighten: 10%;
 
+// striped header
+$stroke-width: 4px;
+
+$good-background: $green;
+$good-color: black;
+$bad-background: $dark-red;
+$bad-color: white;

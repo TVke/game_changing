@@ -35,7 +35,7 @@ class CardTableSeeder extends Seeder
             ['title'=>'2 voor de prijs van 1','description'=>'Je mag twee schijven steken deze beurt.','FK_game'=>'2',],
             ['title'=>'Geheugenverlies','description'=>'Sla een beurt over.','FK_game'=>'2',],
             ['title'=>'Delen?','description'=>'Je mag de schijf van je tegenstander zijn beurt zelf plaatsen.','FK_game'=>'2',],
-            ['title'=>'Valsspelen','description'=>'Als vier schuiven met dezelfde kleur in contact staan heb je gewonnen. Ze moeten niet in een rij staan.','FK_game'=>'2',],
+            ['title'=>'Valsspelen','description'=>'Als vier schijven met dezelfde kleur in contact staan heb je gewonnen. Ze moeten niet in een rij staan.','FK_game'=>'2',],
             ['title'=>'Tijd terugspoelen!','description'=>'Haal de laatst geplaatste schijf eruit.','FK_game'=>'3',],
             ['title'=>'Wisselen','description'=>'Wissel van kleur!','FK_game'=>'3',],
 
