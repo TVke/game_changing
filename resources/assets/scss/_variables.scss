@@ -10,21 +10,23 @@ $red: #F15F5C;
 $green: #ABED83;
 $yellow: #F3F5C4;
 
-$dark-blue: #336699;
+//$dark-blue: #336699;
 $dark-red: #CC3333;
 
-$background-color: $dark-blue;
-$accent-background: $dark-red;
+$game-blue: #0C6699;
+
+$background-color: orange;
+$accent-background: $game-blue;
 $accent-color: white;
 
 // color tweeks
-$darken: 20%;
+$darken: 15%;
 $lighten: 10%;
 
 // striped header
 $stroke-width: 4px;
 
-$good-background: $green;
-$good-color: black;
-$bad-background: $dark-red;
+$good-background: #448212;
+$good-color: white;
+$bad-background: #9E1400;
 $bad-color: white;
