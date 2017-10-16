@@ -12,7 +12,7 @@ class GameTableSeeder extends Seeder
     public function run()
     {
 	    DB::table('games')->insert([
-		    ['name'=>'Memorie','description'=>'Draai twee dezelfde kaartjes om te winnen','picture'=>'memorie.jpeg',],
+		    ['name'=>'Memory','description'=>'Draai twee dezelfde kaartjes om te winnen','picture'=>'memorie.jpeg',],
             ['name'=>'Vier op een rij','description'=>'Probeer 4 op een rij te krijgen','picture'=>'memorie.jpeg',],
             ['name'=>'Monopoly','description'=>'Verdien het meeste geld en koop de meeste gronden.','picture'=>'memorie.jpeg',],
             ['name'=>'Dammen','description'=>'Versla je tegenstander in een potje dammen.','picture'=>'memorie.jpeg',],

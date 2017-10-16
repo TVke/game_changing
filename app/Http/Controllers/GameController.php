@@ -21,7 +21,7 @@ class GameController extends Controller
     }
 
     public function play() {
-	    $randomTime = rand(60,120);
+	    $randomTime = rand(30,60);
         return view('play',compact('randomTime'));
     }
 }
