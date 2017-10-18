@@ -17,10 +17,12 @@ class CreateCardsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->integer('FK_game')->unsigned();
+            $table->unsignedInteger('FK_game');
+            $table->unsignedInteger('FK_categorie');
             $table->timestamps();
 
             $table->foreign('FK_game')->references('id')->on('games')->onDelete('cascade');
+            $table->foreign('FK_categorie')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -33,6 +35,7 @@ class CreateCardsTable extends Migration
     {
         Schema::table('cards', function (Blueprint $table) {
             $table->dropForeign(['FK_game']);
+	        $table->dropForeign(['FK_categorie']);
         });
         Schema::dropIfExists('cards');
     }
