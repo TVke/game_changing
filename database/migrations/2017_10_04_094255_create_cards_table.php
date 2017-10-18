@@ -34,7 +34,8 @@ class CreateCardsTable extends Migration
     public function down()
     {
         Schema::table('cards', function (Blueprint $table) {
-            $table->dropForeign(['FK_game','FK_categorie']);
+            $table->dropForeign(['FK_game']);
+	        $table->dropForeign(['FK_categorie']);
         });
         Schema::dropIfExists('cards');
     }
