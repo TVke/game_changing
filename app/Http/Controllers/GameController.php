@@ -21,7 +21,9 @@ class GameController extends Controller
     }
 
     public function play(Game $game) {
-    	$min = 3;$max = 6;$start=random_int($min,$max);
+
+        #Load game time
+    	$min = $game->time_min;$max = $game->time_max;$start=random_int($min,$max);
 
         #Add to popularity
         $gameName = $game->name;
