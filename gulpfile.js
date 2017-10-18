@@ -58,6 +58,17 @@ gulp.task('image:watch', function () {
 
 /*
  *
+ * audio
+ *
+ */
+
+gulp.task('audio', function () {
+	return gulp.src('resources/assets/audio/*.mp3')
+		.pipe(gulp.dest('public/audio'));
+});
+
+/*
+ *
  * favicons
  *
  */

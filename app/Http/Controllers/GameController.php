@@ -34,4 +34,8 @@ class GameController extends Controller
 
         return view('play',compact(['min','max','start']));
     }
+
+    public function suggest(){
+
+    }
 }
