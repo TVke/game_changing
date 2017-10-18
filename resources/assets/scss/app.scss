@@ -57,7 +57,6 @@ body{
 				margin-right: 10px;
 				padding: 10px 15px 13px;
 				border-radius: 0 3px 3px 0;
-
 			}
 		}
 
@@ -83,10 +82,6 @@ body{
 			color: $accent-color;
 			padding:10px 35px 13px;
 			font-size: 1.3em;
-
-			&.var-submit{
-				background: lime;
-			}
 		}
 	}
 
@@ -215,6 +210,30 @@ body{
 				right: 0;
 				bottom: 115px;
 
+				&.var-good{
+					h2{
+						background: repeating-linear-gradient(-45deg
+						,$good-background
+						,$good-background $stroke-width
+						,lighten($good-background,5%) $stroke-width
+						,lighten($good-background,5%) $stroke-width*2);
+						color: $good-color;
+					}
+				}
+				&.var-bad{
+					h2{
+						background: repeating-linear-gradient(-45deg
+						,$bad-background
+						,$bad-background $stroke-width
+						,lighten($bad-background,5%) $stroke-width
+						,lighten($bad-background,5%) $stroke-width*2);
+						color: $bad-color;
+					}
+				}
+				&.var-finisher{
+					border-color: $finisher-border-color;
+				}
+
 				h2{
 					padding: 20px;
 					background: $accent-background;
@@ -226,22 +245,7 @@ body{
 					color: $accent-color;
 					margin-bottom: 10px;
 
-					&.var-good{
-						background: repeating-linear-gradient(-45deg
-						,$good-background
-						,$good-background $stroke-width
-						,lighten($good-background,5%) $stroke-width
-						,lighten($good-background,5%) $stroke-width*2);
-						color: $good-color;
-					}
-					&.var-bad{
-						background: repeating-linear-gradient(-45deg
-						,$bad-background
-						,$bad-background $stroke-width
-						,lighten($bad-background,5%) $stroke-width
-						,lighten($bad-background,5%) $stroke-width*2);
-						color: $bad-color;
-					}
+
 				}
 				p{
 					padding: 10px 20px;

@@ -26,7 +26,7 @@
 		{{ csrf_field() }}
 		<label for="suggestion">Zit uw favoriete spel er niet bij?</label>
 		<input name="suggestion" id="suggestion" placeholder="" value="{{ old("suggestion") }}">
-		<input type="submit" value="vraag aan" class="var-submit">
+		<input type="submit" value="vraag aan">
 	</form>
 	<footer>
 		&copy; GAMEchanging 2017

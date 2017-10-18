@@ -65,14 +65,16 @@
 				if(this.readyState === 4 && this.status === 200){
 					var response = (xhttp.responseText)?JSON.parse(xhttp.responseText):null;
 					if (response){
-						fillCard(response.title,response.description);
+						console.log(response);
+						fillCard(response.categorie.categorie,response.title,response.description);
 					}
 				}};
 			xhttp.open("GET", "/new/card/" + game, true);
 			xhttp.send();
 		}
 
-		function fillCard(title,description){
+		function fillCard(categorie,title,description){
+			cardContent.className = "var-"+categorie;
 			cardContent.getElementsByTagName("h2")[0].innerHTML = title;
 			cardContent.getElementsByTagName("p")[0].innerHTML = description;
 		}

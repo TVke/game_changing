@@ -66,8 +66,6 @@ body {
       color: white;
       padding: 10px 35px 13px;
       font-size: 1.3em; }
-      body form input[type=submit].var-submit {
-        background: lime; }
   body ul {
     list-style: none; }
     body ul li a {
@@ -176,18 +174,20 @@ body {
       left: 0;
       right: 0;
       bottom: 115px; }
+      body main .card dialog.var-good h2 {
+        background: repeating-linear-gradient(-45deg, #448212, #448212 4px, #509815 4px, #509815 8px);
+        color: white; }
+      body main .card dialog.var-bad h2 {
+        background: repeating-linear-gradient(-45deg, #9E1400, #9E1400 4px, #b81700 4px, #b81700 8px);
+        color: white; }
+      body main .card dialog.var-finisher {
+        border-color: #FFEA39; }
       body main .card dialog h2 {
         padding: 20px;
         background: #0C6699;
         background: repeating-linear-gradient(-45deg, #0C6699, #0C6699 4px, #0e76b1 4px, #0e76b1 8px);
         color: white;
         margin-bottom: 10px; }
-        body main .card dialog h2.var-good {
-          background: repeating-linear-gradient(-45deg, #448212, #448212 4px, #509815 4px, #509815 8px);
-          color: white; }
-        body main .card dialog h2.var-bad {
-          background: repeating-linear-gradient(-45deg, #9E1400, #9E1400 4px, #b81700 4px, #b81700 8px);
-          color: white; }
       body main .card dialog p {
         padding: 10px 20px; }
     body main .card button {
