@@ -29,14 +29,20 @@
 			max = parseInt(countDown.dataset.max),
 			currentTime = parseInt(countDown.innerHTML),
 			paused = false,
+			wonButton = document.getElementById("won"),
 			pauseButton = document.getElementById("pause"),
 			card = document.getElementsByClassName("card")[0],
 			cardContent = document.getElementsByTagName("dialog")[0],
 			readButton = document.getElementById("read"),
+			notification = document.getElementById("notification"),
 			timer;
 
 		startTimer();
 
+		wonButton.addEventListener("click",function(e){
+			e.preventDefault();
+
+		});
 		pauseButton.addEventListener("click",function(e){
 			e.preventDefault();
 			pauseButton.innerHTML = (!paused)?"speel verder":"pipi pauze";
@@ -51,9 +57,10 @@
 			if(!paused){
 				if(currentTime>0){
 					currentTime -= 1;
-					countDown.innerHTML = currentTime;
+					// countDown.innerHTML = currentTime;
 				}else if(currentTime === 0){
 					card.classList.add("show");
+					// notification.play();
 				}
 			}
 		}
@@ -70,17 +77,19 @@
 				if(this.readyState === 4 && this.status === 200){
 					var response = (xhttp.responseText)?JSON.parse(xhttp.responseText):null;
 					if (response){
-						fillCard(response.categorie.categorie,response.title,response.description);
+						fillCard(response.categorie.categorie,response.title,response.description,response.image);
 					}
 				}};
 			xhttp.open("GET", "/new/card/" + game, true);
 			xhttp.send();
 		}
 
-		function fillCard(categorie,title,description){
+		function fillCard(categorie,title,description,image){
 			cardContent.className = "var-"+categorie;
 			cardContent.getElementsByTagName("h2")[0].innerHTML = title;
-			cardContent.getElementsByTagName("p")[0].innerHTML = description;
+			cardContent.getElementsByTagName("figcaption")[0].innerHTML = description;
+			cardContent.getElementsByTagName("img")[0].alt = title;
+			cardContent.getElementsByTagName("img")[0].src = "/img/"+image;
 		}
 
 		function getRandomNumbreBetween(min, max){
@@ -89,7 +98,7 @@
 
 		function addnextTime(seconds){
 			currentTime = seconds;
-			countDown.innerHTML = seconds;
+			// countDown.innerHTML = seconds;
 			startTimer();
 		}
 	}

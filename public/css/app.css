@@ -145,6 +145,11 @@ body {
     color: white;
     padding: 10px 40px 13px;
     cursor: pointer; }
+    body main button.var-sub {
+      font-size: 1.5em;
+      background: #1086c8;
+      background: -webkit-gradient(linear, left top, left bottom, from(#1086c8), to(#1086c8));
+      background: linear-gradient(#1086c8, #1086c8); }
   body main .card {
     opacity: 0;
     -webkit-transition: all .5s ease;
@@ -189,8 +194,12 @@ body {
         background: repeating-linear-gradient(-45deg, #0C6699, #0C6699 4px, #0e76b1 4px, #0e76b1 8px);
         color: white;
         margin-bottom: 10px; }
-      body main .card dialog p {
-        padding: 10px 20px; }
+      body main .card dialog figure img {
+        display: block;
+        width: 100%; }
+      body main .card dialog figure figcaption {
+        padding: 10px 20px;
+        font-size: 1.3em; }
     body main .card button {
       position: absolute;
       bottom: 0;
@@ -215,7 +224,7 @@ body {
     display: none; }
   body #nextPage {
     background: orange;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -227,3 +236,5 @@ body {
     body #nextPage.hide {
       -webkit-transform: translate(100%);
               transform: translate(100%); }
+  body .hidden {
+    display: none; }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
 {
-	protected $visible = ['categorie','title','description'];
+	protected $visible = ['categorie','title','description','image'];
 
     public function game()
     {

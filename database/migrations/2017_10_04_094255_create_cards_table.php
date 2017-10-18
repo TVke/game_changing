@@ -17,6 +17,7 @@ class CreateCardsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
+	        $table->string('image');
             $table->unsignedInteger('FK_game');
             $table->unsignedInteger('FK_categorie');
             $table->timestamps();
