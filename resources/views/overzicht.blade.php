@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-
+	<div id="oldPage">
 	<form action="{{ route('search') }}" method="post">
 		{{ csrf_field() }}
 		<input name="search" placeholder="zoek een spel" value="{{ request('search') }}">
@@ -22,13 +22,16 @@
 			</li>
 		@endforeach
 	</ul>
-	<form class="var-suggestion" action="{{ route('search') }}" method="post">
+	<form class="var-suggestion" action="{{ route('suggest') }}" method="post">
 		{{ csrf_field() }}
+		{{ method_field('PUT') }}
 		<label for="suggestion">Zit uw favoriete spel er niet bij?</label>
 		<input name="suggestion" id="suggestion" placeholder="" value="{{ old("suggestion") }}">
-		<input type="submit" value="vraag aan" class="var-submit">
+		<input type="submit" value="vraag aan">
 	</form>
 	<footer>
 		&copy; GAMEchanging 2017
 	</footer>
+	</div>
+	<div id="nextPage" class="hide"></div>
 @endsection

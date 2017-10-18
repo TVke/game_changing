@@ -45,7 +45,7 @@ body {
         border-radius: 0 3px 3px 0; }
     body form label {
       width: 100%;
-      padding: 20px 20px 5px; }
+      padding: 20px 13px 5px; }
     body form input {
       -webkit-box-flex: 1;
           -ms-flex: 1;
@@ -65,9 +65,8 @@ body {
       border: none;
       color: white;
       padding: 10px 35px 13px;
-      font-size: 1.3em; }
-      body form input[type=submit].var-submit {
-        background: lime; }
+      font-size: 1.3em;
+      cursor: pointer; }
   body ul {
     list-style: none; }
     body ul li a {
@@ -176,18 +175,20 @@ body {
       left: 0;
       right: 0;
       bottom: 115px; }
+      body main .card dialog.var-good h2 {
+        background: repeating-linear-gradient(-45deg, #448212, #448212 4px, #509815 4px, #509815 8px);
+        color: white; }
+      body main .card dialog.var-bad h2 {
+        background: repeating-linear-gradient(-45deg, #9E1400, #9E1400 4px, #b81700 4px, #b81700 8px);
+        color: white; }
+      body main .card dialog.var-finisher {
+        border-color: #FFEA39; }
       body main .card dialog h2 {
         padding: 20px;
         background: #0C6699;
         background: repeating-linear-gradient(-45deg, #0C6699, #0C6699 4px, #0e76b1 4px, #0e76b1 8px);
         color: white;
         margin-bottom: 10px; }
-        body main .card dialog h2.var-good {
-          background: repeating-linear-gradient(-45deg, #448212, #448212 4px, #509815 4px, #509815 8px);
-          color: white; }
-        body main .card dialog h2.var-bad {
-          background: repeating-linear-gradient(-45deg, #9E1400, #9E1400 4px, #b81700 4px, #b81700 8px);
-          color: white; }
       body main .card dialog p {
         padding: 10px 20px; }
     body main .card button {
@@ -208,3 +209,21 @@ body {
       body main .card.show dialog {
         -webkit-transform: translateY(0);
                 transform: translateY(0); }
+  body #oldPage.show {
+    height: 100vh; }
+  body #oldPage.hide {
+    display: none; }
+  body #nextPage {
+    background: orange;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-transform: translate(0);
+            transform: translate(0); }
+    body #nextPage.hide {
+      -webkit-transform: translate(100%);
+              transform: translate(100%); }

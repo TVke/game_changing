@@ -15,7 +15,7 @@ class CardsController extends Controller
 	 */
 	public function randomOne(Game $game)
 	{
-		$chosenCard = Card::where("FK_game", $game->id)->inRandomOrder()->first();
+		$chosenCard = Card::where("FK_game", $game->id)->with('categorie')->inRandomOrder()->first();
 		return $chosenCard;
 	}
 
