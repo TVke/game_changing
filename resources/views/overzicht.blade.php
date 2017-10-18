@@ -13,6 +13,12 @@
 		</a>
 	</h1>
 	<ul>
+		<li>
+			<a href="{{ route('overzicht') }}" data-href="{{ route('play', ['game'=>$popGame->name]) }}">
+				<h2>{{ $popGame->name }}</h2>
+				<button>Speel</button>
+			</a>
+		</li>
 		@foreach($games as $game)
 			<li>
 				<a href="{{ route('overzicht') }}" data-href="{{ route('play', ['game'=>$game->name]) }}">
@@ -25,7 +31,17 @@
 	<form class="var-suggestion" action="{{ route('suggest') }}" method="post">
 		{{ csrf_field() }}
 		{{ method_field('PUT') }}
-		<label for="suggestion">Zit uw favoriete spel er niet bij?</label>
+
+		@if($errors->has('suggestion'))
+            <label>{{ $errors->first('suggestion')}}</label>
+        @endif
+
+		@if(Session::has('message'))
+			<label for="suggestion">{{ Session::get('message') }}</label>
+		@else
+			<label for="suggestion">Zit uw favoriete spel er niet bij?</label>
+		@endif
+
 		<input name="suggestion" id="suggestion" placeholder="" value="{{ old("suggestion") }}">
 		<input type="submit" value="vraag aan">
 	</form>
