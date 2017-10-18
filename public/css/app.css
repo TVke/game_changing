@@ -31,7 +31,21 @@ body {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    margin: 0px 0 20px; }
+    margin: 0 0 20px; }
+    body form.var-suggestion {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      body form.var-suggestion input {
+        margin-left: 10px;
+        border-radius: 3px 0 0 3px; }
+      body form.var-suggestion input[type=submit] {
+        margin-left: 0;
+        margin-right: 10px;
+        padding: 10px 15px 13px;
+        border-radius: 0 3px 3px 0; }
+    body form label {
+      width: 100%;
+      padding: 20px 20px 5px; }
     body form input {
       -webkit-box-flex: 1;
           -ms-flex: 1;
@@ -52,6 +66,8 @@ body {
       color: white;
       padding: 10px 35px 13px;
       font-size: 1.3em; }
+      body form input[type=submit].var-submit {
+        background: lime; }
   body ul {
     list-style: none; }
     body ul li a {

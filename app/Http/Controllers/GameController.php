@@ -21,7 +21,7 @@ class GameController extends Controller
     }
 
     public function play() {
-	    $randomTime = rand(30,60);
-        return view('play',compact('randomTime'));
+    	$min = 3;$max = 6;$start=random_int($min,$max);
+        return view('play',compact(['min','max','start']));
     }
 }
