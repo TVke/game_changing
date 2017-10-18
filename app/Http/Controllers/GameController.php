@@ -11,10 +11,16 @@ class GameController extends Controller
 	public function index(Request $request){
 
         $lastGame = $request->cookie('gamechanging');
-        $popGame = Game::where('id','=',$lastGame)->first();
-        $games = Game::where('id','!=',$popGame->id)->limit(4)->orderBy('popularity','desc')->get();
+        if($lastGame !== null){
+            $popGame = Game::where('id','=',$lastGame)->first();
+            $games = Game::where('id','!=',$popGame->id)->limit(4)->orderBy('popularity','desc')->get();
+            return view('overzicht', compact('games','popGame'));
+        }
+        else{
+            $games = Game::limit(5)->orderBy('popularity','desc')->get();
+            return view('overzicht', compact('games'));
+        }
 
-        return view('overzicht', compact('games','popGame'));
     }
 
     public function search(Request $request){
