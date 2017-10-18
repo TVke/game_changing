@@ -60,7 +60,8 @@
 					// countDown.innerHTML = currentTime;
 				}else if(currentTime === 0){
 					card.classList.add("show");
-					// notification.play();
+					var promise = notification.play();
+					if (promise !== undefined){promise.catch(function(e){}).then(function(){});}
 				}
 			}
 		}
@@ -68,7 +69,7 @@
 			clearInterval(timer);
 			timer = 0;
 			timer = setInterval(lower,1000);
-			fetchNewCard();
+			setTimeout(fetchNewCard,500);
 		}
 
 		function fetchNewCard(){
