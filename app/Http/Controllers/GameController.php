@@ -10,7 +10,7 @@ class GameController extends Controller
 {
 	public function index(){
 
-        $games = Game::limit(5)->get();
+        $games = Game::limit(5)->orderBy('popularity','desc')->get();
         return view('overzicht', compact('games'));
     }
 
@@ -20,8 +20,16 @@ class GameController extends Controller
     	return view('overzicht', compact('games'));
     }
 
-    public function play() {
-    	$min = 3;$max = 6;$start=random_int($min,$max);
+    public function play(Game $game) {
+
+        #Load game time
+    	$min = $game->time_min;$max = $game->time_max;$start=random_int($min,$max);
+
+        #Add to popularity
+        $gameName = $game->name;
+        Game::where('name','=',$gameName)->increment('popularity');
+
+
         return view('play',compact(['min','max','start']));
     }
 }
