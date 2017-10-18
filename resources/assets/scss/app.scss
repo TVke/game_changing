@@ -41,7 +41,30 @@ body{
 	form{
 		display: flex;
 		width: 100%;
-		margin: 0px 0 20px;
+		margin: 0 0 20px;
+
+
+		&.var-suggestion{
+			flex-wrap: wrap;
+
+			input{
+				margin-left: 10px;
+				border-radius: 3px 0 0 3px;
+			}
+
+			input[type=submit]{
+				margin-left: 0;
+				margin-right: 10px;
+				padding: 10px 15px 13px;
+				border-radius: 0 3px 3px 0;
+
+			}
+		}
+
+		label{
+			width: 100%;
+			padding:20px 20px 5px;
+		}
 
 		input{
 			flex: 1;
@@ -60,6 +83,10 @@ body{
 			color: $accent-color;
 			padding:10px 35px 13px;
 			font-size: 1.3em;
+
+			&.var-submit{
+				background: lime;
+			}
 		}
 	}
 

@@ -19,7 +19,9 @@
 	}
 	function play(game){
 		var countDown = document.getElementById("countDown"),
-			currentTime = parseInt(countDown.dataset.max),
+			min = parseInt(countDown.dataset.min),
+			max = parseInt(countDown.dataset.max),
+			currentTime = parseInt(countDown.innerHTML),
 			paused = false,
 			pauseButton = document.getElementById("pause"),
 			card = document.getElementsByClassName("card")[0],
@@ -28,31 +30,33 @@
 			timer;
 
 		startTimer();
-		fetchNewCard();
 
 		pauseButton.addEventListener("click",function(e){
 			e.preventDefault();
-			pauseButton.innerHTML = (!paused)?"speel verder":"pauze";
+			pauseButton.innerHTML = (!paused)?"speel verder":"pipi pauze";
 			paused = (!paused);
 		});
 
 		function lower(){
 			if(!paused){
 				if(currentTime>0){
-					--currentTime;
+					currentTime -= 1;
 					countDown.innerHTML = currentTime;
 				}else if(currentTime === 0){
-					clearInterval(timer);
+
 					card.classList.add("show");
 					readButton.addEventListener("click",function(){
-						addnextTime(getRandomNumbreBetween(30, 60));
+						addnextTime(getRandomNumbreBetween(min, max));
 						card.classList.remove("show");
 					});
 				}
 			}
 		}
 		function startTimer(){
+			clearInterval(timer);
+			timer = 0;
 			timer = setInterval(lower,1000);
+			fetchNewCard();
 		}
 
 		function fetchNewCard(){
@@ -81,7 +85,6 @@
 			currentTime = seconds;
 			countDown.innerHTML = seconds;
 			startTimer();
-			fetchNewCard();
 		}
 	}
 
