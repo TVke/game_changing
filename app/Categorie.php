@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categorie extends Model
 {
-    public function categorie()
-    {
-        return $this->hasMany(Card::class,'FK_categorie');
-    }
+	protected $visible = ['categorie'];
+
+	public function card(){
+		return $this->hasMany(Card::class,'FK_categorie');
+	}
 }

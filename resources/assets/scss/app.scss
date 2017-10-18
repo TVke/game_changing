@@ -57,13 +57,12 @@ body{
 				margin-right: 10px;
 				padding: 10px 15px 13px;
 				border-radius: 0 3px 3px 0;
-
 			}
 		}
 
 		label{
 			width: 100%;
-			padding:20px 20px 5px;
+			padding:20px 13px 5px;
 		}
 
 		input{
@@ -83,10 +82,7 @@ body{
 			color: $accent-color;
 			padding:10px 35px 13px;
 			font-size: 1.3em;
-
-			&.var-submit{
-				background: lime;
-			}
+			cursor: pointer;
 		}
 	}
 
@@ -215,6 +211,30 @@ body{
 				right: 0;
 				bottom: 115px;
 
+				&.var-good{
+					h2{
+						background: repeating-linear-gradient(-45deg
+						,$good-background
+						,$good-background $stroke-width
+						,lighten($good-background,5%) $stroke-width
+						,lighten($good-background,5%) $stroke-width*2);
+						color: $good-color;
+					}
+				}
+				&.var-bad{
+					h2{
+						background: repeating-linear-gradient(-45deg
+						,$bad-background
+						,$bad-background $stroke-width
+						,lighten($bad-background,5%) $stroke-width
+						,lighten($bad-background,5%) $stroke-width*2);
+						color: $bad-color;
+					}
+				}
+				&.var-finisher{
+					border-color: $finisher-border-color;
+				}
+
 				h2{
 					padding: 20px;
 					background: $accent-background;
@@ -226,22 +246,7 @@ body{
 					color: $accent-color;
 					margin-bottom: 10px;
 
-					&.var-good{
-						background: repeating-linear-gradient(-45deg
-						,$good-background
-						,$good-background $stroke-width
-						,lighten($good-background,5%) $stroke-width
-						,lighten($good-background,5%) $stroke-width*2);
-						color: $good-color;
-					}
-					&.var-bad{
-						background: repeating-linear-gradient(-45deg
-						,$bad-background
-						,$bad-background $stroke-width
-						,lighten($bad-background,5%) $stroke-width
-						,lighten($bad-background,5%) $stroke-width*2);
-						color: $bad-color;
-					}
+
 				}
 				p{
 					padding: 10px 20px;
@@ -269,6 +274,29 @@ body{
 					transform: translateY(0);
 				}
 			}
+		}
+	}
+	#oldPage{
+		&.show{
+			height: 100vh;
+		}
+		&.hide{
+			display: none;
+		}
+	}
+	#nextPage{
+		background: $background-color;
+		position: absolute;
+		top:0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		transition: all .5s ease;
+
+		transform: translate(0);
+
+		&.hide{
+			transform: translate(100%);
 		}
 	}
 }
