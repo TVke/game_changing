@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-	public function index(){
+	public function index(Request $request){
 
-        $games = Game::limit(5)->orderBy('popularity','desc')->get();
-        return view('overzicht', compact('games'));
+        $lastGame = $request->cookie('gamechanging');
+        $popGame = Game::where('id','=',$lastGame)->first();
+        $games = Game::where('id','!=',$popGame->id)->limit(4)->orderBy('popularity','desc')->get();
+
+        return view('overzicht', compact('games','popGame'));
     }
 
     public function search(Request $request){
@@ -31,8 +34,10 @@ class GameController extends Controller
         $gameName = $game->name;
         Game::where('name',$gameName)->increment('popularity');
 
-
-        return view('play',compact(['min','max','start']));
+        return response(
+            view('play',compact(['min','max','start'])))
+            ->cookie('gamechanging',$game->id, 3600
+        );
     }
 
     public function suggest(Request $request){

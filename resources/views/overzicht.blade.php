@@ -13,6 +13,12 @@
 		</a>
 	</h1>
 	<ul>
+		<li>
+			<a href="{{ route('overzicht') }}" data-href="{{ route('play', ['game'=>$popGame->name]) }}">
+				<h2>{{ $popGame->name }}</h2>
+				<button>Speel</button>
+			</a>
+		</li>
 		@foreach($games as $game)
 			<li>
 				<a href="{{ route('overzicht') }}" data-href="{{ route('play', ['game'=>$game->name]) }}">
