@@ -35,7 +35,16 @@ class GameController extends Controller
         return view('play',compact(['min','max','start']));
     }
 
-    public function suggest(){
+    public function suggest(Request $request){
+        
+        $this->validate($request, [
+            'suggestion'   => 'required|string|max:255',
+        ]);
+        
+        Game::create(['name' => $request->suggestion]);
 
+        \Session::flash('message','Bedankt voor uw suggestie.');
+        
+        return redirect()->route('overzicht');
     }
 }
