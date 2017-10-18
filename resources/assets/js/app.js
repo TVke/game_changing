@@ -9,7 +9,13 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if(this.readyState === 4 && this.status === 200){
-						document.body.innerHTML=xhttp.responseText;
+						var next = document.getElementById("nextPage"),old = document.getElementById("oldPage");
+						next.innerHTML = xhttp.responseText;
+						old.className = "show";
+						setTimeout(function(){
+							old.className = "hide";
+						},500);
+						next.removeAttribute("class");
 						play(links[i].dataset.href.substr(window.location.href.length+5));
 					}};
 				xhttp.open("GET", links[i].dataset.href, true);
@@ -36,6 +42,10 @@
 			pauseButton.innerHTML = (!paused)?"speel verder":"pipi pauze";
 			paused = (!paused);
 		});
+		readButton.addEventListener("click",function(){
+			addnextTime(getRandomNumbreBetween(min, max));
+			card.classList.remove("show");
+		});
 
 		function lower(){
 			if(!paused){
@@ -43,12 +53,7 @@
 					currentTime -= 1;
 					countDown.innerHTML = currentTime;
 				}else if(currentTime === 0){
-
 					card.classList.add("show");
-					readButton.addEventListener("click",function(){
-						addnextTime(getRandomNumbreBetween(min, max));
-						card.classList.remove("show");
-					});
 				}
 			}
 		}
@@ -65,7 +70,6 @@
 				if(this.readyState === 4 && this.status === 200){
 					var response = (xhttp.responseText)?JSON.parse(xhttp.responseText):null;
 					if (response){
-						console.log(response);
 						fillCard(response.categorie.categorie,response.title,response.description);
 					}
 				}};
