@@ -147,6 +147,18 @@ body{
 		}
 	}
 	main{
+		p{
+			display: block;
+			background-color: white;
+			text-align: center;
+			margin: 10px auto 50px;
+			width:70%;
+			min-width: 300px;
+			max-width: 500px;
+			padding: 20px;
+			border-radius: 5px;
+			font-size: 1.4em;
+		}
 		span{
 			font-family: $writen-font;
 			font-size: 4em;
@@ -181,6 +193,12 @@ body{
 			color: $accent-color;
 			padding:10px 40px 13px;
 			cursor: pointer;
+
+			&.var-sub{
+				font-size: 1.5em;
+				background: lighten($accent-background,10%);
+				background: linear-gradient(lighten($accent-background,10%),lighten($accent-background,10%));
+			}
 		}
 
 		.card{
@@ -248,9 +266,20 @@ body{
 
 
 				}
-				p{
-					padding: 10px 20px;
+				figure{
+					img{
+						display: block;
+						width: 100%;
+					}
+					figcaption{
+						padding: 10px 20px;
+						font-size: 1.3em;
+					}
 				}
+				//p{
+				//	padding: 10px 20px;
+				//	font-size: 1.3em;
+				//}
 			}
 
 			button{
@@ -286,7 +315,7 @@ body{
 	}
 	#nextPage{
 		background: $background-color;
-		position: absolute;
+		position: fixed;
 		top:0;
 		left:0;
 		right: 0;
@@ -298,6 +327,9 @@ body{
 		&.hide{
 			transform: translate(100%);
 		}
+	}
+	.hidden{
+		display: none;
 	}
 }
 
