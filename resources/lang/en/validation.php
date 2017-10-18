@@ -100,8 +100,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'suggestion' => [
+            'required'  => 'Gelieve het veld in te vullen.',
+            'string'    => 'Gelieve een geldige input in te geven',
+            'max'       => 'Uw suggestie is te lang.',
+            'unique'    => 'Uw seggestie is al eens toegevoed en in verwerking.',
         ],
     ],
 

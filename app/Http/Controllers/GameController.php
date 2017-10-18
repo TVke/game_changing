@@ -29,7 +29,7 @@ class GameController extends Controller
 
         #Add to popularity
         $gameName = $game->name;
-        Game::where('name','=',$gameName)->increment('popularity');
+        Game::where('name',$gameName)->increment('popularity');
 
 
         return view('play',compact(['min','max','start']));
@@ -38,7 +38,7 @@ class GameController extends Controller
     public function suggest(Request $request){
         
         $this->validate($request, [
-            'suggestion'   => 'required|string|max:255',
+            'suggestion'   => 'required|unique:games,name|string|max:255',
         ]);
         
         Game::create(['name' => $request->suggestion]);

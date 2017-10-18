@@ -26,6 +26,10 @@
 		{{ csrf_field() }}
 		{{ method_field('PUT') }}
 
+		@if($errors->has('suggestion'))
+            <label>{{ $errors->first('suggestion')}}</label>
+        @endif
+
 		@if(Session::has('message'))
 			<label for="suggestion">{{ Session::get('message') }}</label>
 		@else
