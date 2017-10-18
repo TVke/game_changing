@@ -19,7 +19,6 @@ class CreateGamesTable extends Migration
             $table->integer('popularity')->default(0);
             $table->integer('time_min')->nullable()->default(null);
             $table->integer('time_max')->nullable()->default(null);
-	        $table->boolean('suggestion')->default(1);
             $table->boolean('approved')->default(0);
             $table->timestamps();
         });
