@@ -57,7 +57,6 @@
 			if(!paused){
 				if(currentTime>0){
 					currentTime -= 1;
-					// countDown.innerHTML = currentTime;
 				}else if(currentTime === 0){
 					card.classList.add("show");
 					var promise = notification.play();
@@ -99,7 +98,6 @@
 
 		function addnextTime(seconds){
 			currentTime = seconds;
-			// countDown.innerHTML = seconds;
 			startTimer();
 		}
 	}

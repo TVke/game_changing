@@ -113,6 +113,17 @@ body {
       width: 10px; }
   body header h1 {
     margin-top: 9px; }
+  body main p {
+    display: block;
+    background-color: white;
+    text-align: center;
+    margin: 10px auto 50px;
+    width: 70%;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.4em; }
   body main span {
     font-family: "Sacramento", sans-serif;
     font-size: 4em;
