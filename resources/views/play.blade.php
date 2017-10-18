@@ -8,7 +8,7 @@
 	</h1>
 </header>
 <main>
-	<p>Begin je echte spel te spelen. Je krijgt een melding als er </p>
+	<p>Begin het spel te spelen. Je krijgt een melding als er een wijziging is. Na elke kaart is het aan de volgende speler.</p>
 	<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}" class="hidden">{{ $start }}</span>
 	<button id="won">gewonnen</button>
 	<button id="pause" class="var-sub">pipi pauze</button>
@@ -20,9 +20,8 @@
 				<figcaption>Speel rustig verder. En geniet van het originele spel.</figcaption>
 				<img src="{{ asset('/img/shuffle.png') }}" alt="">
 			</figure>
-			{{--<p>Speel rustig verder. En geniet van het originele spel.</p>--}}
 		</dialog>
 		<button id="read">doorgegeven</button>
 	</div>
-	<audio id="notification" src="{{ asset('/audio/notification.mp3') }}"></audio>
+	<audio id="notification" src="{{ asset('/audio/notification.mp3') }}" preload="metadata"></audio>
 </main>
