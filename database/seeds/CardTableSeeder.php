@@ -47,7 +47,7 @@ class CardTableSeeder extends Seeder
             #Dammen
             ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van de tegenstander.','image'=>'shuffle.png','FK_game'=>'4','FK_categorie'=>'2','approved'=>1,],
             ['title'=>'Jouw beurt?','description'=>'Verplaats een schijf van de tegenstander.','image'=>'shuffle.png','FK_game'=>'4','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>'shuffle.png','FK_game'=>'4','FK_categorie'=>'3',],
+            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>'shuffle.png','FK_game'=>'4','FK_categorie'=>'3','approved'=>1,],
 
             #Schaken
             ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van je tegenstander.','image'=>'shuffle.png','FK_game'=>'5','FK_categorie'=>'2','approved'=>1,],
