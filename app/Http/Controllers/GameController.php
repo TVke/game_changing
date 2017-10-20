@@ -12,12 +12,12 @@ class GameController extends Controller
 
         $lastGame = $request->cookie('gamechanging');
         if($lastGame !== null){
-            $popGame = Game::where('id','=',$lastGame)->first();
-            $games = Game::where('id','!=',$popGame->id)->limit(4)->orderBy('popularity','desc')->get();
+            $popGame = Game::where('id',$lastGame)->first();
+            $games = Game::where([['id','!=',$popGame->id],['approved',1]])->orderBy('popularity','desc')->get();
             return view('overzicht', compact('games','popGame'));
         }
         else{
-            $games = Game::limit(5)->orderBy('popularity','desc')->get();
+            $games = Game::where('approved',1)->orderBy('popularity','desc')->get();
             return view('overzicht', compact('games'));
         }
 
@@ -25,7 +25,7 @@ class GameController extends Controller
 
     public function search(Request $request){
 
-    	$games = Game::where('name', 'like', '%' . $request['search'] . '%')->get();
+    	$games = Game::where([['name', 'like', '%' . $request['search'] . '%'],['approved',1]])->get();
     	return view('overzicht', compact('games'));
     }
 
