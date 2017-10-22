@@ -4,19 +4,19 @@
   padding: 0; }
 
 body {
-  background: orange;
+  background: #fdc539;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%; }
   body h1 {
     text-align: center;
-    color: #b37400;
-    text-shadow: -1px -1px 1px #805300, 1px 1px 1px #ffb733;
+    color: #e7a602;
+    text-shadow: -1px -1px 1px #b58202, 1px 1px 1px #fed46b;
     padding-top: 20px; }
     body h1 a {
       color: inherit;
       text-decoration: none; }
       body h1 a:hover {
-        color: #a36a00; }
+        color: #d89b02; }
     body h1 p {
       font-family: "Press Start 2P", sans-serif;
       font-size: 1.5em; }
@@ -98,7 +98,7 @@ body {
         cursor: pointer; }
   body footer {
     font-size: 0.8em;
-    color: #332100;
+    color: #694b01;
     text-align: center;
     padding: 30px 0 50px; }
   body header a {
@@ -107,7 +107,7 @@ body {
     text-decoration: none;
     padding: 10px;
     margin: 10px;
-    background: #ffb733; }
+    background: #fed46b; }
     body header a svg {
       height: 10px;
       width: 10px; }
@@ -171,7 +171,7 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    background: #b37400; }
+    background: #e7a602; }
     body main .card dialog {
       display: block;
       background: white;
@@ -180,8 +180,8 @@ body {
       margin: 50px auto 0;
       border: 10px solid gainsboro;
       border-radius: 5px;
-      -webkit-box-shadow: 0 0 15px #805300;
-              box-shadow: 0 0 15px #805300;
+      -webkit-box-shadow: 0 0 15px #b58202;
+              box-shadow: 0 0 15px #b58202;
       position: absolute;
       -webkit-transition: all .5s ease;
       transition: all .5s ease;
@@ -234,7 +234,7 @@ body {
   body #oldPage.hide {
     display: none; }
   body #nextPage {
-    background: orange;
+    background: #fdc539;
     position: fixed;
     top: 0;
     left: 0;
