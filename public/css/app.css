@@ -240,8 +240,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+    -webkit-transition: all .5s ease-out;
+    transition: all .5s ease-out;
     -webkit-transform: translate(0);
             transform: translate(0); }
     body #nextPage.hide {

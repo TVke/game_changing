@@ -276,10 +276,6 @@ body{
 						font-size: 1.3em;
 					}
 				}
-				//p{
-				//	padding: 10px 20px;
-				//	font-size: 1.3em;
-				//}
 			}
 
 			button{
@@ -320,7 +316,7 @@ body{
 		left:0;
 		right: 0;
 		bottom: 0;
-		transition: all .5s ease;
+		transition: all .5s ease-out;
 
 		transform: translate(0);
 
