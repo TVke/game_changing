@@ -64,6 +64,28 @@ gulp.task('audio', function () {
 		.pipe(gulp.dest('public/audio'));
 });
 
+// /*
+//  *
+//  * device-mockups
+//  *
+//  */
+//
+// gulp.task('device', function () {
+// 	return gulp.src('resources/assets/device-mockups/**/*')
+// 		.pipe(gulp.dest('public/device-mockups'));
+// });
+//
+// /*
+//  *
+//  * plugins
+//  *
+//  */
+//
+// gulp.task('plugins', function () {
+// 	return gulp.src('resources/assets/plugins/**/*')
+// 		.pipe(gulp.dest('public/plugins'));
+// });
+
 /*
  *
  * favicons
