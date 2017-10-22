@@ -41,7 +41,7 @@ class GameController extends Controller
         Game::where('name',$gameName)->increment('popularity');
 
         return response(
-            view('play',compact(['min','max','start'])))
+            view('play',compact(['min','max','start','game'])))
             ->cookie('gamechanging',$game->id, 3600
         );
     }

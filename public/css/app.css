@@ -96,6 +96,8 @@ body {
                 flex: 0;
         border-radius: 0 3px 3px 0;
         cursor: pointer; }
+    body ul li.var-last-used a {
+      border-left: 5px solid gray; }
   body footer {
     font-size: 0.8em;
     color: #694b01;
@@ -249,3 +251,16 @@ body {
               transform: translate(100%); }
   body .hidden {
     display: none; }
+  body #win {
+    opacity: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #ce9402;
+    pointer-events: none; }
+    body #win.win {
+      opacity: 1; }

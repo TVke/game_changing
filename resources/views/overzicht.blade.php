@@ -14,7 +14,7 @@
 	</h1>
 	<ul>
 		@if (isset($popGame))
-			<li>
+			<li class="var-last-used">
 				<a href="{{ route('overzicht') }}" data-href="{{ route('play', ['game'=>$popGame->name]) }}">
 					<h2>{{ $popGame->name }}</h2>
 					<button>Speel</button>

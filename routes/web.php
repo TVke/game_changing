@@ -20,6 +20,6 @@ Route::get('/game/{game}', 'GameController@play')->name('play');
 
 Route::get('/new/card/{game}', 'CardsController@randomOne');
 
-
+Route::put('/add/card/{game}','CardsController@store')->name('add_card');
 
 

@@ -1,7 +1,7 @@
 !function(window, undefined){
-
+// list of all games
 	var links = document.querySelectorAll("ul li a");
-
+// EventListener for every game
 	for(var i=0,ilen=links.length;i<ilen;++i){
 		!function(i){
 			links[i].addEventListener('click',function(e){
@@ -9,44 +9,65 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if(this.readyState === 4 && this.status === 200){
+						// class switching for css transition
 						var next = document.getElementById("nextPage"),old = document.getElementById("oldPage");
 						next.innerHTML = xhttp.responseText;
-						old.className = "show";
+						addClass("show",old);
 						setTimeout(function(){
-							old.className = "hide";
+							addClass("hide",old);
 						},500);
 						next.removeAttribute("class");
-						play(links[i].dataset.href.substr(window.location.href.length+5));
+						// load clicked game
+						LoadGame(links[i].dataset.href.substr(window.location.href.length+5));
 					}};
 				xhttp.open("GET", links[i].dataset.href, true);
 				xhttp.send();
 			});
 		}(i);
 	}
-	function play(game){
+
+	function addClass(className,to){
+		to.classList.add(className);
+	}
+	function removeClass(className,from){
+		from.classList.remove(className);
+	}
+
+	// load Game
+	function LoadGame(game){
 		var countDown = document.getElementById("countDown"),
 			min = parseInt(countDown.dataset.min),
 			max = parseInt(countDown.dataset.max),
-			currentTime = parseInt(countDown.innerHTML),
-			paused = false,
+			time = parseInt(countDown.innerHTML),
+			pausedTimer = false,
 			wonButton = document.getElementById("won"),
 			pauseButton = document.getElementById("pause"),
 			card = document.getElementsByClassName("card")[0],
 			cardContent = document.getElementsByTagName("dialog")[0],
 			readButton = document.getElementById("read"),
-			notification = document.getElementById("notification"),
-			timer;
+			winField = document.getElementById("win"),
+			notification, timer;
 
 		startTimer();
 
+		notification = document.createElement("audio");
+		notification.setAttribute('src',"/audio/notification.mp3");
+		notification.id = "notification";
+		notification.preload = "auto";
+		notification.addEventListener("ended",function(e){
+			e.preventDefault();
+			resetAudio(notification);
+		});
+		document.body.appendChild(notification);
 		wonButton.addEventListener("click",function(e){
 			e.preventDefault();
-
+			pausedTimer = true;
+			addClass("win",winField);
 		});
 		pauseButton.addEventListener("click",function(e){
 			e.preventDefault();
-			pauseButton.innerHTML = (!paused)?"speel verder":"pipi pauze";
-			paused = (!paused);
+			pauseButton.innerHTML = (!pausedTimer)?"speel verder":"pipi pauze";
+			pausedTimer = (!pausedTimer);
 		});
 		readButton.addEventListener("click",function(){
 			addnextTime(getRandomNumbreBetween(min, max));
@@ -54,10 +75,10 @@
 		});
 
 		function lower(){
-			if(!paused){
-				if(currentTime>0){
-					currentTime -= 1;
-				}else if(currentTime === 0){
+			if(!pausedTimer){
+				if(time>0){
+					time -= 1;
+				}else if(time === 0){
 					card.classList.add("show");
 					var promise = notification.play();
 					if (promise !== undefined){promise.catch(function(e){}).then(function(){});}
@@ -69,6 +90,13 @@
 			timer = 0;
 			timer = setInterval(lower,1000);
 			setTimeout(fetchNewCard,500);
+
+		}
+
+		function resetAudio(audioElement){
+			audioElement.pause();
+			audioElement.currentTime = 0;
+			console.log("in reset "+audioElement + "paused?" + audioElement.paused);
 		}
 
 		function fetchNewCard(){
@@ -84,12 +112,14 @@
 			xhttp.send();
 		}
 
-		function fillCard(categorie,title,description,image){
-			cardContent.className = "var-"+categorie;
+		function fillCard(category,title,description,image){
+			cardContent.className = "var-"+category;
 			cardContent.getElementsByTagName("h2")[0].innerHTML = title;
 			cardContent.getElementsByTagName("figcaption")[0].innerHTML = description;
 			cardContent.getElementsByTagName("img")[0].alt = title;
-			cardContent.getElementsByTagName("img")[0].src = "/img/"+image;
+			if(image !== ""){
+				cardContent.getElementsByTagName("img")[0].src = "/img/"+image;
+			}
 		}
 
 		function getRandomNumbreBetween(min, max){
@@ -97,9 +127,8 @@
 		}
 
 		function addnextTime(seconds){
-			currentTime = seconds;
+			time = seconds;
 			startTimer();
 		}
 	}
-
 }(window);
