@@ -40,9 +40,9 @@
         </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+<!--                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#download">Download</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#features">Kenmerken</a>
                     </li>
@@ -66,7 +66,7 @@
 
                         <h1 class="mb-5">
                             is de manier om je bordspellen nieuw leven in te blazen en plezier te beleven met de hele familie!</h1>
-                        <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Speel het nu!</a>
+                        <a href="/" class="btn btn-outline btn-xl js-scroll-trigger">Speel het nu!</a>
                     </div>
                 </div>
                 <div class="col-lg-5 my-auto">
@@ -88,7 +88,7 @@
         </div>
     </header>
 
-    <section class="download bg-primary text-center" id="download">
+<!--     <section class="download bg-primary text-center" id="download">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="features" id="features">
         <div class="container">
@@ -170,8 +170,7 @@
     <section class="cta">
         <div class="cta-content">
             <div class="container">
-                <h2>Geniet<br>Samen</h2>
-                <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Ontdek meer!</a>
+                <h2>Geniet!<br>Met de hele familie</h2>
             </div>
         </div>
         <div class="overlay"></div>

@@ -58,4 +58,9 @@ class GameController extends Controller
         
         return redirect()->route('overzicht');
     }
+
+    public function promo(){
+               
+        return view('promo');
+    }
 }
