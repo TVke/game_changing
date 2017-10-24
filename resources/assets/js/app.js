@@ -26,6 +26,13 @@
 		}(i);
 	}
 
+	if(document.getElementById("overlay")){
+		document.getElementById("overlay").addEventListener("click",function(e){
+			e.preventDefault();
+			this.classList.add("hide");
+		});
+	}
+
 	function addClass(className,to){
 		to.classList.add(className);
 	}
@@ -51,7 +58,7 @@
 		startTimer();
 
 		notification = document.createElement("audio");
-		notification.setAttribute('src',"/audio/notification.mp3");
+		notification.setAttribute('src',"/audio/notification - 10.mp3");
 		notification.id = "notification";
 		notification.preload = "auto";
 		notification.addEventListener("ended",function(e){
@@ -72,6 +79,7 @@
 		readButton.addEventListener("click",function(){
 			addnextTime(getRandomNumbreBetween(min, max));
 			card.classList.remove("show");
+			resetAudio(notification);
 		});
 
 		function lower(){
@@ -84,19 +92,6 @@
 					if (promise !== undefined){promise.catch(function(e){}).then(function(){});}
 				}
 			}
-		}
-		function startTimer(){
-			clearInterval(timer);
-			timer = 0;
-			timer = setInterval(lower,1000);
-			setTimeout(fetchNewCard,500);
-
-		}
-
-		function resetAudio(audioElement){
-			audioElement.pause();
-			audioElement.currentTime = 0;
-			console.log("in reset "+audioElement + "paused?" + audioElement.paused);
 		}
 
 		function fetchNewCard(){
@@ -124,6 +119,19 @@
 
 		function getRandomNumbreBetween(min, max){
 			return Math.floor(Math.random() * (max - min) + 1) + min;
+		}
+
+		function resetAudio(audioElement){
+			audioElement.pause();
+			audioElement.currentTime = 0;
+			console.log("in reset "+audioElement + "paused?" + audioElement.paused);
+		}
+
+		function startTimer(){
+			clearInterval(timer);
+			timer = 0;
+			timer = setInterval(lower,1000);
+			setTimeout(fetchNewCard,500);
 		}
 
 		function addnextTime(seconds){

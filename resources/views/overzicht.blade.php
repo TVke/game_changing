@@ -1,6 +1,18 @@
 @extends('layout')
 @section('content')
 	<div id="oldPage">
+		@if(!isset($popGame))
+			<div id="overlay">
+				<figure class="arrow-group">
+					<img class="arrow var-top" src="{{ asset('/img/arrow-up.png') }}" alt="pijl naar zoekbalk">
+					<figcaption class="arrow-description var-top">Hier kan je een spel zoeken</figcaption>
+				</figure>
+				<figure class="arrow-group var-right">
+					<figcaption class="arrow-description var-right">Hier kan je een spel beginnen spelen</figcaption>
+					<img class="arrow var-right" src="{{ asset('/img/arrow-right.png') }}" alt="pijl naar speelknop">
+				</figure>
+			</div>
+		@endif
 	<form action="{{ route('search') }}" method="post">
 		{{ csrf_field() }}
 		<input name="search" placeholder="zoek een spel" value="{{ request('search') }}">
@@ -13,7 +25,7 @@
 		</a>
 	</h1>
 	<ul>
-		@if (isset($popGame))
+		@if(isset($popGame))
 			<li class="var-last-used">
 				<a href="{{ route('overzicht') }}" data-href="{{ route('play', ['game'=>$popGame->name]) }}">
 					<h2>{{ $popGame->name }}</h2>

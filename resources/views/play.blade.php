@@ -31,5 +31,4 @@
 		</dialog>
 		<button id="read">doorgegeven</button>
 	</div>
-	{{--<audio id="notification" src="{{ asset('/audio/notification.mp3') }}" preload="auto"></audio>--}}
 </main>
