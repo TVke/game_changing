@@ -8,7 +8,19 @@
 	</h1>
 </header>
 <main>
-	<p>Begin het spel te spelen. Je krijgt een melding als er een wijziging is. Na elke kaart is het aan de volgende speler.</p>
+	<div class="text-box">
+
+		<p>Begin het spel te spelen. Je krijgt een melding als er een wijziging is. Na elke kaart is het aan de volgende speler.</p>
+		@if($categories)
+			<div class="legend">
+				@foreach($categories as $category)
+					<div class="legend-item">
+						<div class="key var-{{ $category->name }}"></div><span class="description">{{ $category->displayName }}</span>
+					</div>
+				@endforeach
+			</div>
+		@endif
+	</div>
 	<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}" class="hidden">{{ $start }}</span>
 	<button id="won">gewonnen</button>
 	<button id="pause" class="var-sub">pipi pauze</button>
@@ -26,7 +38,7 @@
 			<h2>Speel verder</h2>
 			<figure>
 				<figcaption>Speel rustig verder. En geniet van het originele spel.</figcaption>
-				<img src="{{ asset('/img/shuffle.png') }}" alt="">
+				<img src="{{ asset('/img/placeholder.png') }}" alt="">
 			</figure>
 		</dialog>
 		<button id="read">doorgegeven</button>

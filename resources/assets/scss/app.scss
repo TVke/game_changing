@@ -187,8 +187,12 @@ body{
 				}
 			}
 			&.var-last-used{
+				$accent-border-width: 5px;
 				a{
-					border-left: 5px solid gray;
+					border-left: $accent-border-width solid gray;
+				}
+				h2{
+					padding-left: 15px - $accent-border-width;
 				}
 			}
 		}
@@ -222,41 +226,29 @@ body{
 		}
 	}
 	main{
-		p{
-			display: block;
-			background-color: white;
-			text-align: center;
-			margin: 10px auto 50px;
-			width:70%;
-			min-width: 300px;
-			max-width: 500px;
-			padding: 20px;
-			border-radius: 5px;
-			font-size: 1.4em;
-		}
-		span{
-			font-family: $writen-font;
-			font-size: 4em;
-			display: block;
-			text-align: center;
-			padding: 35px 0;
-			position: relative;
-
-			&::after{
-				content: "";
-				display: block;
-				width: 150px;
-				height: 150px;
-				position: absolute;
-				top:0;
-				right: 0;
-				left: 0;
-				margin:0 auto;
-				border: solid 1px gainsboro;
-				z-index: -1;
-				border-radius: 50%;
-			}
-		}
+		//span{
+		//	font-family: $writen-font;
+		//	font-size: 4em;
+		//	display: block;
+		//	text-align: center;
+		//	padding: 35px 0;
+		//	position: relative;
+		//
+		//	&::after{
+		//		content: "";
+		//		display: block;
+		//		width: 150px;
+		//		height: 150px;
+		//		position: absolute;
+		//		top:0;
+		//		right: 0;
+		//		left: 0;
+		//		margin:0 auto;
+		//		border: solid 1px gainsboro;
+		//		z-index: -1;
+		//		border-radius: 50%;
+		//	}
+		//}
 		button{
 			background: $accent-background;
 			background: linear-gradient($accent-background,$accent-background);
@@ -273,6 +265,60 @@ body{
 				font-size: 1.5em;
 				background: lighten($accent-background,10%);
 				background: linear-gradient(lighten($accent-background,10%),lighten($accent-background,10%));
+			}
+		}
+
+		.text-box{
+			display: block;
+			background-color: white;
+			text-align: center;
+			margin: 10px auto 50px;
+			width:70%;
+			min-width: 300px;
+			max-width: 500px;
+			padding: 20px;
+			border-radius: 5px;
+			font-size: 1.4em;
+
+			.legend-item{
+				display: flex;
+				padding: 0 10px;
+
+				.key{
+					display: block;
+					width: 50px;
+					height: 50px;
+					border: 10px solid gainsboro;
+					margin: 5px ;
+					border-radius: 5px;
+					float: left;
+					background: repeating-linear-gradient(-45deg
+					,$accent-background
+					,$accent-background $stroke-width
+					,lighten($accent-background,5%) $stroke-width
+					,lighten($accent-background,5%) $stroke-width*2);
+
+					&.var-good{
+						background: repeating-linear-gradient(-45deg
+						,$good-background
+						,$good-background $stroke-width
+						,lighten($good-background,5%) $stroke-width
+						,lighten($good-background,5%) $stroke-width*2);
+					}
+					&.var-bad{
+						background: repeating-linear-gradient(-45deg
+						,$bad-background
+						,$bad-background $stroke-width
+						,lighten($bad-background,5%) $stroke-width
+						,lighten($bad-background,5%) $stroke-width*2);
+					}
+					&.var-finisher{
+						border-color: $finisher-border-color;
+					}
+				}
+				.description{
+					align-self: center;
+				}
 			}
 		}
 

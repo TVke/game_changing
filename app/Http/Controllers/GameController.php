@@ -40,10 +40,10 @@ class GameController extends Controller
         #Add to popularity
         $gameName = $game->name;
         Game::where('name',$gameName)->increment('popularity');
-        $category = Categorie::all();
+        $categories = Categorie::all();
 
         return response(
-            view('play',compact(['min','max','start','game','category'])))
+            view('play',compact(['min','max','start','game','categories'])))
             ->cookie('gamechanging',$game->id, 3600
         );
     }

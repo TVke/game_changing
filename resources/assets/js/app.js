@@ -36,9 +36,6 @@
 	function addClass(className,to){
 		to.classList.add(className);
 	}
-	function removeClass(className,from){
-		from.classList.remove(className);
-	}
 
 	// load Game
 	function LoadGame(game){
@@ -100,7 +97,7 @@
 				if(this.readyState === 4 && this.status === 200){
 					var response = (xhttp.responseText)?JSON.parse(xhttp.responseText):null;
 					if (response){
-						fillCard(response.categorie.categorie,response.title,response.description,response.image);
+						fillCard(response.categorie.name,response.title,response.description,response.image);
 					}
 				}};
 			xhttp.open("GET", "/new/card/" + game, true);
@@ -112,7 +109,7 @@
 			cardContent.getElementsByTagName("h2")[0].innerHTML = title;
 			cardContent.getElementsByTagName("figcaption")[0].innerHTML = description;
 			cardContent.getElementsByTagName("img")[0].alt = title;
-			if(image !== ""){
+			if(image !== null){
 				cardContent.getElementsByTagName("img")[0].src = "/img/"+image;
 			}
 		}
@@ -124,7 +121,6 @@
 		function resetAudio(audioElement){
 			audioElement.pause();
 			audioElement.currentTime = 0;
-			console.log("in reset "+audioElement + "paused?" + audioElement.paused);
 		}
 
 		function startTimer(){
