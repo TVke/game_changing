@@ -42,8 +42,6 @@ class GameController extends Controller
         Game::where('name',$gameName)->increment('popularity');
         $category = Categorie::all();
 
-        return $category;
-
         return response(
             view('play',compact(['min','max','start','game','category'])))
             ->cookie('gamechanging',$game->id, 3600
