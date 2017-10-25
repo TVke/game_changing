@@ -17,7 +17,7 @@ class CreateCardsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-	        $table->string('image')->nullable()->default('placeholder.png');
+	        $table->string('image')->nullable()->default(null);
             $table->unsignedInteger('FK_game');
             $table->unsignedInteger('FK_categorie')->nullable()->default(null);
             $table->boolean('approved')->default(0);
