@@ -5,7 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var imageOptim = require('gulp-imageoptim2');
 
-gulp.task('default', ['sass','js','image','favicons']);
+gulp.task('default', ['sass','js','image','favicons','audio']);
 gulp.task('watch', ['sass:watch','js:watch']);
 
 /*
@@ -63,28 +63,6 @@ gulp.task('audio', function () {
 	return gulp.src('resources/assets/audio/*.mp3')
 		.pipe(gulp.dest('public/audio'));
 });
-
-// /*
-//  *
-//  * device-mockups
-//  *
-//  */
-//
-// gulp.task('device', function () {
-// 	return gulp.src('resources/assets/device-mockups/**/*')
-// 		.pipe(gulp.dest('public/device-mockups'));
-// });
-//
-// /*
-//  *
-//  * plugins
-//  *
-//  */
-//
-// gulp.task('plugins', function () {
-// 	return gulp.src('resources/assets/plugins/**/*')
-// 		.pipe(gulp.dest('public/plugins'));
-// });
 
 /*
  *

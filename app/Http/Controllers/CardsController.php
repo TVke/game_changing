@@ -45,9 +45,19 @@ class CardsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Game $game)
     {
-        //
+        // $this->validate($request, [
+        //     'suggestion'   => 'required|string|max:255',
+        // ]);
+
+        return 'test';
+        
+        // Game::create(['name' => $request->suggestion]);
+
+        // \Session::flash('message','Bedankt voor uw suggestie.');
+        
+        // return redirect()->route('overzicht');
     }
 
     /**

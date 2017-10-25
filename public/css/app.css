@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P|Sacramento");
 *, html {
   margin: 0;
@@ -26,6 +27,58 @@ body {
       position: relative;
       bottom: 25px;
       left: 22px; }
+  body #overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    padding: 20px;
+    cursor: pointer; }
+    body #overlay .arrow-group {
+      position: relative;
+      top: 30px; }
+      body #overlay .arrow-group .arrow {
+        display: block;
+        width: 100px;
+        margin: 5px;
+        position: relative; }
+        body #overlay .arrow-group .arrow.var-top {
+          float: left; }
+        body #overlay .arrow-group .arrow.var-right {
+          float: right;
+          display: block;
+          width: 75px;
+          right: 100px; }
+      body #overlay .arrow-group .arrow-description {
+        display: block;
+        color: white;
+        position: relative; }
+        body #overlay .arrow-group .arrow-description.var-top {
+          position: relative;
+          top: 35px;
+          left: 5px; }
+        body #overlay .arrow-group .arrow-description.var-right {
+          text-align: center;
+          clear: both; }
+          @media all and (min-width: 530px) {
+            body #overlay .arrow-group .arrow-description.var-right {
+              text-align: right;
+              right: 100px; } }
+      body #overlay .arrow-group.var-right {
+        top: 105px; }
+    body #overlay.hide {
+      display: none; }
+    body #overlay::before {
+      content: "✕";
+      font-size: 1.5em;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px 15px;
+      color: white; }
   body form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -96,6 +149,10 @@ body {
                 flex: 0;
         border-radius: 0 3px 3px 0;
         cursor: pointer; }
+    body ul li.var-last-used a {
+      border-left: 5px solid gray; }
+    body ul li.var-last-used h2 {
+      padding-left: 10px; }
   body footer {
     font-size: 0.8em;
     color: #694b01;
@@ -113,37 +170,16 @@ body {
       width: 10px; }
   body header h1 {
     margin-top: 9px; }
-  body main p {
-    display: block;
-    background-color: white;
-    text-align: center;
-    margin: 10px auto 50px;
-    width: 70%;
-    min-width: 300px;
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 5px;
-    font-size: 1.4em; }
-  body main span {
-    font-family: "Sacramento", sans-serif;
-    font-size: 4em;
-    display: block;
-    text-align: center;
-    padding: 35px 0;
-    position: relative; }
-    body main span::after {
-      content: "";
-      display: block;
-      width: 150px;
-      height: 150px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      margin: 0 auto;
-      border: solid 1px gainsboro;
-      z-index: -1;
-      border-radius: 50%; }
+  body header #mute {
+    padding: 10px 13px;
+    margin: 10px;
+    background: #fed46b;
+    border: 1px solid black;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer; }
   body main button {
     background: #0C6699;
     background: -webkit-gradient(linear, left top, left bottom, from(#0C6699), to(#0C6699));
@@ -161,6 +197,55 @@ body {
       background: #1086c8;
       background: -webkit-gradient(linear, left top, left bottom, from(#1086c8), to(#1086c8));
       background: linear-gradient(#1086c8, #1086c8); }
+  body main .text-box {
+    display: block;
+    background-color: white;
+    text-align: center;
+    margin: 10px auto 50px;
+    width: 70%;
+    min-width: 250px;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.4em; }
+    body main .text-box .legend {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin-top: 30px; }
+      body main .text-box .legend .legend-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        padding: 0 10px; }
+        body main .text-box .legend .legend-item .key {
+          display: block;
+          width: 50px;
+          height: 50px;
+          border: 10px solid gainsboro;
+          margin: 5px;
+          border-radius: 5px;
+          float: left;
+          background: repeating-linear-gradient(-45deg, #0C6699, #0C6699 4px, #0e76b1 4px, #0e76b1 8px); }
+          body main .text-box .legend .legend-item .key.var-good {
+            background: repeating-linear-gradient(-45deg, #448212, #448212 4px, #509815 4px, #509815 8px); }
+          body main .text-box .legend .legend-item .key.var-bad {
+            background: repeating-linear-gradient(-45deg, #9E1400, #9E1400 4px, #b81700 4px, #b81700 8px); }
+          body main .text-box .legend .legend-item .key.var-finisher {
+            border-color: #FFEA39; }
+        body main .text-box .legend .legend-item .description {
+          -ms-flex-item-align: center;
+              align-self: center;
+          padding-left: 10px;
+          font-size: 1.2rem; }
   body main .card {
     opacity: 0;
     -webkit-transition: all .5s ease;
@@ -240,12 +325,34 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    opacity: 1;
     -webkit-transition: all .5s ease-out;
     transition: all .5s ease-out;
     -webkit-transform: translate(0);
             transform: translate(0); }
     body #nextPage.hide {
+      opacity: 0;
       -webkit-transform: translate(100%);
               transform: translate(100%); }
+    body #nextPage.show {
+      position: static; }
   body .hidden {
     display: none; }
+  body #win {
+    opacity: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #ce9402;
+    pointer-events: none; }
+    body #win form {
+      width: 100%;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+    body #win.win {
+      opacity: 1;
+      pointer-events: all; }

@@ -6,22 +6,42 @@
 		<p>GAME</p>
 		<span>changing</span>
 	</h1>
+	<button id="mute"><img src="{{ asset('/img/audio-aan.svg') }}" alt="geluid aan"></button>
 </header>
 <main>
-	<p>Begin het spel te spelen. Je krijgt een melding als er een wijziging is. Na elke kaart is het aan de volgende speler.</p>
+	<div class="text-box">
+
+		<p>Begin het spel te spelen. Je krijgt een melding als er een wijziging is. Na elke kaart is het aan de volgende speler.</p>
+		@if($categories)
+			<div class="legend">
+				@foreach($categories as $category)
+					<div class="legend-item">
+						<div class="key var-{{ $category->name }}"></div><span class="description">{{ $category->displayName }}</span>
+					</div>
+				@endforeach
+			</div>
+		@endif
+	</div>
 	<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}" class="hidden">{{ $start }}</span>
 	<button id="won">gewonnen</button>
 	<button id="pause" class="var-sub">pipi pauze</button>
-
+	<div id="win">
+		<form action="{{ route('add_card',['game'=>$game->id]) }}" method="post">
+			{{ csrf_field() }}
+			{{ method_field('PUT') }}
+			<label for="suggestion">Heb je zelf een leuke regel om toe te voegen?</label>
+			<input name="suggestion" id="suggestion">
+			<input type="submit" value="stel voor">
+		</form>
+	</div>
 	<div class="card">
 		<dialog>
 			<h2>Speel verder</h2>
 			<figure>
 				<figcaption>Speel rustig verder. En geniet van het originele spel.</figcaption>
-				<img src="{{ asset('/img/shuffle.png') }}" alt="">
+				<img src="{{ asset('/img/placeholder.png') }}" alt="">
 			</figure>
 		</dialog>
 		<button id="read">doorgegeven</button>
 	</div>
-	<audio id="notification" src="{{ asset('/audio/notification.mp3') }}" preload="metadata"></audio>
 </main>
