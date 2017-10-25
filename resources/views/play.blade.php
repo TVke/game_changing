@@ -12,7 +12,15 @@
 	<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}" class="hidden">{{ $start }}</span>
 	<button id="won">gewonnen</button>
 	<button id="pause" class="var-sub">pipi pauze</button>
-
+	<div id="win">
+		<form action="{{ route('add_card',['game'=>$game->id]) }}" method="post">
+			{{ csrf_field() }}
+			{{ method_field('PUT') }}
+			<label for="suggestion">Heb je zelf een leuke regel om toe te voegen?</label>
+			<input name="suggestion" id="suggestion">
+			<input type="submit" value="stel voor">
+		</form>
+	</div>
 	<div class="card">
 		<dialog>
 			<h2>Speel verder</h2>
@@ -23,5 +31,4 @@
 		</dialog>
 		<button id="read">doorgegeven</button>
 	</div>
-	<audio id="notification" src="{{ asset('/audio/notification.mp3') }}" preload="metadata"></audio>
 </main>
