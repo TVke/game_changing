@@ -3,6 +3,7 @@
 namespace GAMEchanging\Http\Controllers;
 
 use GAMEchanging\Card;
+use GAMEchanging\Categorie;
 use GAMEchanging\Game;
 use Illuminate\Http\Request;
 
@@ -39,9 +40,10 @@ class GameController extends Controller
         #Add to popularity
         $gameName = $game->name;
         Game::where('name',$gameName)->increment('popularity');
+        $category = Categorie::all();
 
         return response(
-            view('play',compact(['min','max','start','game'])))
+            view('play',compact(['min','max','start','game','category'])))
             ->cookie('gamechanging',$game->id, 3600
         );
     }
