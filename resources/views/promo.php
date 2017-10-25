@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GameChanging</title>
+    <title>GAMEchanging</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,9 +46,6 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#features">Kenmerken</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -77,9 +74,6 @@
                                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
                                     <img src="img/site-mobile.png" class="img-fluid" alt="">
                                 </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,21 +81,6 @@
             </div>
         </div>
     </header>
-
-<!--     <section class="download bg-primary text-center" id="download">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <h2 class="section-heading">Ondenk de app nu!</h2>
-                    <p>Onze app is beschikbaar op alle mobiele apparaten! Klik hieronder om het te downloaden.</p>
-                    <div class="badges">
-                        <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-                        <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="features" id="features">
         <div class="container">
@@ -176,42 +155,9 @@
         <div class="overlay"></div>
     </section>
 
-    <section class="contact bg-primary" id="contact">
-        <div class="container">
-            <ul class="list-inline list-social">
-                <li class="list-inline-item social-twitter">
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item social-facebook">
-                    <a href="#">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item social-google-plus">
-                    <a href="#">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
-            <p>&copy; 2017 GameChanging. All Rights Reserved.</p>
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="#">Privacy</a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#">Terms</a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
+            <p>&copy; 2017 GameChanging</p>
         </div>
     </footer>
 
