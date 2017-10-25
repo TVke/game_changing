@@ -12,10 +12,10 @@ class CategorieTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            ['categorie'=>'neutral',],
-		    ['categorie'=>'good',],
-		    ['categorie'=>'bad',],
-		    ['categorie'=>'finisher',],
+            ['name'=>'neutral','displayName'=>'Neutraal'],
+		    ['name'=>'good','displayName'=>'Goed'],
+		    ['name'=>'bad','displayName'=>'Slecht'],
+		    ['name'=>'finisher','displayName'=>'Afmaker'],
 	    ]);
     }
 }
