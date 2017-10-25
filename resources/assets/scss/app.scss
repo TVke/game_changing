@@ -112,7 +112,7 @@ body{
 		display: flex;
 		width: 100%;
 		margin: 0 0 20px;
-
+		pointer-events: all;
 
 		&.var-suggestion{
 			flex-wrap: wrap;
@@ -280,44 +280,54 @@ body{
 			border-radius: 5px;
 			font-size: 1.4em;
 
-			.legend-item{
+			.legend{
 				display: flex;
-				padding: 0 10px;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				margin-top: 30px;
 
-				.key{
-					display: block;
-					width: 50px;
-					height: 50px;
-					border: 10px solid gainsboro;
-					margin: 5px ;
-					border-radius: 5px;
-					float: left;
-					background: repeating-linear-gradient(-45deg
-					,$accent-background
-					,$accent-background $stroke-width
-					,lighten($accent-background,5%) $stroke-width
-					,lighten($accent-background,5%) $stroke-width*2);
+				.legend-item{
+					display: flex;
+					flex: 1;
+					padding: 0 10px;
 
-					&.var-good{
+					.key{
+						display: block;
+						width: 50px;
+						height: 50px;
+						border: 10px solid gainsboro;
+						margin: 5px ;
+						border-radius: 5px;
+						float: left;
 						background: repeating-linear-gradient(-45deg
-						,$good-background
-						,$good-background $stroke-width
-						,lighten($good-background,5%) $stroke-width
-						,lighten($good-background,5%) $stroke-width*2);
+						,$accent-background
+						,$accent-background $stroke-width
+						,lighten($accent-background,5%) $stroke-width
+						,lighten($accent-background,5%) $stroke-width*2);
+
+						&.var-good{
+							background: repeating-linear-gradient(-45deg
+							,$good-background
+							,$good-background $stroke-width
+							,lighten($good-background,5%) $stroke-width
+							,lighten($good-background,5%) $stroke-width*2);
+						}
+						&.var-bad{
+							background: repeating-linear-gradient(-45deg
+							,$bad-background
+							,$bad-background $stroke-width
+							,lighten($bad-background,5%) $stroke-width
+							,lighten($bad-background,5%) $stroke-width*2);
+						}
+						&.var-finisher{
+							border-color: $finisher-border-color;
+						}
 					}
-					&.var-bad{
-						background: repeating-linear-gradient(-45deg
-						,$bad-background
-						,$bad-background $stroke-width
-						,lighten($bad-background,5%) $stroke-width
-						,lighten($bad-background,5%) $stroke-width*2);
+					.description{
+						align-self: center;
+						padding-left: 10px;
+						font-size: 1.2rem;
 					}
-					&.var-finisher{
-						border-color: $finisher-border-color;
-					}
-				}
-				.description{
-					align-self: center;
 				}
 			}
 		}
@@ -326,7 +336,7 @@ body{
 			opacity: 0;
 			transition: all .5s ease;
 			pointer-events: none;
-			position: absolute;
+			position: fixed;
 			top:0;
 			bottom: 0;
 			right: 0;
@@ -437,12 +447,17 @@ body{
 		left:0;
 		right: 0;
 		bottom: 0;
+		opacity: 1;
 		transition: all .5s ease-out;
 
 		transform: translate(0);
 
 		&.hide{
+			opacity: 0;
 			transform: translate(100%);
+		}
+		&.show{
+			position: static;
 		}
 	}
 	.hidden{
