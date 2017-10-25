@@ -13,9 +13,14 @@
 						var next = document.getElementById("nextPage"),old = document.getElementById("oldPage");
 						next.innerHTML = xhttp.responseText;
 						addClass("show",old);
+
+						// !!!!!!!!!!!!! switch to transition ended !!!!!!!
 						setTimeout(function(){
+							removeClass("show",old);
 							addClass("hide",old);
-						},500);
+							addClass("show",next);
+						},600);
+
 						next.removeAttribute("class");
 						// load clicked game
 						LoadGame(links[i].dataset.href.substr(window.location.href.length+5));
@@ -36,6 +41,9 @@
 	function addClass(className,to){
 		to.classList.add(className);
 	}
+	function removeClass(className,to){
+		to.classList.remove(className);
+	}
 
 	// load Game
 	function LoadGame(game){
@@ -44,11 +52,14 @@
 			max = parseInt(countDown.dataset.max),
 			time = parseInt(countDown.innerHTML),
 			pausedTimer = false,
+			mute = false,
 			wonButton = document.getElementById("won"),
 			pauseButton = document.getElementById("pause"),
 			card = document.getElementsByClassName("card")[0],
 			cardContent = document.getElementsByTagName("dialog")[0],
 			readButton = document.getElementById("read"),
+			audioButton = document.getElementById("mute"),
+			audioImage = audioButton.children[0],
 			winField = document.getElementById("win"),
 			notification, timer;
 
@@ -77,6 +88,11 @@
 			addnextTime(getRandomNumbreBetween(min, max));
 			card.classList.remove("show");
 			resetAudio(notification);
+		});
+		audioButton.addEventListener("click",function(){
+			mute = (!mute);
+			audioImage.src = (mute)?"/img/audio-uit.svg":"/img/audio-aan.svg";
+			audioImage.alt = (mute)?"geluid uit":"geluid aan";
 		});
 
 		function lower(){

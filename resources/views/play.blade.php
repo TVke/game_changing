@@ -6,6 +6,7 @@
 		<p>GAME</p>
 		<span>changing</span>
 	</h1>
+	<button id="mute"><img src="{{ asset('/img/audio-aan.svg') }}" alt="geluid aan"></button>
 </header>
 <main>
 	<div class="text-box">
