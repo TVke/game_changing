@@ -101,8 +101,10 @@
 					time -= 1;
 				}else if(time === 0){
 					card.classList.add("show");
-					var promise = notification.play();
-					if (promise !== undefined){promise.catch(function(e){}).then(function(){});}
+					if(!mute){
+						var promise = notification.play();
+						if (promise !== undefined){promise.catch(function(e){}).then(function(){});}
+					}
 				}
 			}
 		}

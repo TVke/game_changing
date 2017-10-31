@@ -129,6 +129,16 @@ body{
 			}
 		}
 
+		p.error{
+			background: lighten($bad-background,35%);
+			color: $bad-color;
+			border: 1px solid $bad-background;
+			padding: 7px 10px;
+			margin: 15px 15px 0;
+			border-radius: 3px;
+			width: 100%;
+		}
+
 		label{
 			width: 100%;
 			padding:20px 13px 5px;
@@ -185,16 +195,15 @@ body{
 					cursor: pointer;
 				}
 			}
-			&.var-last-used{
-				$accent-border-width: 5px;
-				a{
-					border-left: $accent-border-width solid gray;
-				}
-				h2{
-					padding-left: 15px - $accent-border-width;
-				}
-			}
 		}
+	}
+
+	#oldPage>p{
+		text-align: center;
+		padding: 15px;
+		background: white;
+		border-radius: 3px;
+		margin: 15px 10px 50px;
 	}
 
 	footer{
@@ -236,29 +245,29 @@ body{
 		}
 	}
 	main{
-		//span{
-		//	font-family: $writen-font;
-		//	font-size: 4em;
-		//	display: block;
-		//	text-align: center;
-		//	padding: 35px 0;
-		//	position: relative;
-		//
-		//	&::after{
-		//		content: "";
-		//		display: block;
-		//		width: 150px;
-		//		height: 150px;
-		//		position: absolute;
-		//		top:0;
-		//		right: 0;
-		//		left: 0;
-		//		margin:0 auto;
-		//		border: solid 1px gainsboro;
-		//		z-index: -1;
-		//		border-radius: 50%;
-		//	}
-		//}
+		span{
+			font-family: $writen-font;
+			font-size: 4em;
+			display: block;
+			text-align: center;
+			padding: 35px 0;
+			position: relative;
+
+			&::after{
+				content: "";
+				display: block;
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				top:0;
+				right: 0;
+				left: 0;
+				margin:0 auto;
+				border: solid 1px gainsboro;
+				z-index: -1;
+				border-radius: 50%;
+			}
+		}
 		button{
 			background: $accent-background;
 			background: linear-gradient($accent-background,$accent-background);

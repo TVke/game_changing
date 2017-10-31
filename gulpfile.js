@@ -2,10 +2,10 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-var uglify = require('gulp-uglify');
-var imageOptim = require('gulp-imageoptim2');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['sass','js','image','favicons','audio']);
+gulp.task('default', ['sass','js','image','favicons','audio','vendor','devices']);
 gulp.task('watch', ['sass:watch','js:watch']);
 
 /*
@@ -46,7 +46,7 @@ gulp.task('js:watch', function () {
 
 gulp.task('image', function () {
 	return gulp.src('resources/assets/img/**/*')
-	// .pipe(imageOptim.optimize())
+		.pipe(imagemin({progressive: true}))
 		.pipe(gulp.dest('public/img'));
 });
 gulp.task('image:watch', function () {
@@ -73,4 +73,26 @@ gulp.task('audio', function () {
 gulp.task('favicons', function () {
 	return gulp.src('resources/assets/favicons/*')
 		.pipe(gulp.dest('public'));
+});
+
+/*
+ *
+ * vendor
+ *
+ */
+
+gulp.task('vendor', function () {
+	return gulp.src('resources/assets/vendor/**/*')
+		.pipe(gulp.dest('public/vendor'));
+});
+
+/*
+ *
+ * devices
+ *
+ */
+
+gulp.task('devices', function () {
+	return gulp.src('resources/assets/devices/**/*')
+		.pipe(gulp.dest('public/devices'));
 });
