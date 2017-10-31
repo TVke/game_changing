@@ -112,7 +112,6 @@ body{
 		display: flex;
 		width: 100%;
 		margin: 0 0 20px;
-		pointer-events: all;
 
 		&.var-suggestion{
 			flex-wrap: wrap;
@@ -128,6 +127,16 @@ body{
 				padding: 10px 15px 13px;
 				border-radius: 0 3px 3px 0;
 			}
+		}
+
+		p.error{
+			background: lighten($bad-background,35%);
+			color: $bad-color;
+			border: 1px solid $bad-background;
+			padding: 7px 10px;
+			margin: 15px 15px 0;
+			border-radius: 3px;
+			width: 100%;
 		}
 
 		label{
@@ -186,16 +195,15 @@ body{
 					cursor: pointer;
 				}
 			}
-			&.var-last-used{
-				$accent-border-width: 5px;
-				a{
-					border-left: $accent-border-width solid gray;
-				}
-				h2{
-					padding-left: 15px - $accent-border-width;
-				}
-			}
 		}
+	}
+
+	#oldPage>p{
+		text-align: center;
+		padding: 15px;
+		background: white;
+		border-radius: 3px;
+		margin: 15px 10px 50px;
 	}
 
 	footer{
@@ -224,31 +232,42 @@ body{
 		h1{
 			margin-top: 9px;
 		}
+		#mute{
+			padding: 10px 13px;
+			margin: 10px;
+			background: lighten($background-color,$lighten);
+			border:1px solid black;
+			border-radius: 3px;
+			position: absolute;
+			top:0;
+			right: 0;
+			cursor: pointer;
+		}
 	}
 	main{
-		//span{
-		//	font-family: $writen-font;
-		//	font-size: 4em;
-		//	display: block;
-		//	text-align: center;
-		//	padding: 35px 0;
-		//	position: relative;
-		//
-		//	&::after{
-		//		content: "";
-		//		display: block;
-		//		width: 150px;
-		//		height: 150px;
-		//		position: absolute;
-		//		top:0;
-		//		right: 0;
-		//		left: 0;
-		//		margin:0 auto;
-		//		border: solid 1px gainsboro;
-		//		z-index: -1;
-		//		border-radius: 50%;
-		//	}
-		//}
+		span{
+			font-family: $writen-font;
+			font-size: 4em;
+			display: block;
+			text-align: center;
+			padding: 35px 0;
+			position: relative;
+
+			&::after{
+				content: "";
+				display: block;
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				top:0;
+				right: 0;
+				left: 0;
+				margin:0 auto;
+				border: solid 1px gainsboro;
+				z-index: -1;
+				border-radius: 50%;
+			}
+		}
 		button{
 			background: $accent-background;
 			background: linear-gradient($accent-background,$accent-background);
@@ -274,7 +293,7 @@ body{
 			text-align: center;
 			margin: 10px auto 50px;
 			width:70%;
-			min-width: 300px;
+			min-width: 250px;
 			max-width: 500px;
 			padding: 20px;
 			border-radius: 5px;
@@ -336,7 +355,7 @@ body{
 			opacity: 0;
 			transition: all .5s ease;
 			pointer-events: none;
-			position: fixed;
+			position: absolute;
 			top:0;
 			bottom: 0;
 			right: 0;
@@ -475,9 +494,14 @@ body{
 		background: darken($background-color,20%);
 		pointer-events: none;
 
+		form{
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
 		&.win{
 			opacity: 1;
-
+			pointer-events: all;
 		}
 	}
 }
