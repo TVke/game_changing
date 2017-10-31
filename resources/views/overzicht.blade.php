@@ -24,7 +24,7 @@
 				<span>changing</span>
 			</a>
 		</h1>
-		@if(empty($games))
+		@if(!empty($games))
 			<ul>
 				@if(isset($popGame))
 					<li>
