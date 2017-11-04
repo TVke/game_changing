@@ -7,6 +7,11 @@
 					<img class="arrow var-top" src="{{ asset('/img/arrow-up.png') }}" alt="pijl naar zoekbalk">
 					<figcaption class="arrow-description var-top">Hier kan je een spel zoeken</figcaption>
 				</figure>
+				<h1 class="logo var-overlay">
+					<span>GAME</span>
+					<span>changing</span>
+					<i>toevoegingen voor bestaande spelen</i>
+				</h1>
 				<figure class="arrow-group var-right">
 					<figcaption class="arrow-description var-right">Hier kan je een spel beginnen spelen</figcaption>
 					<img class="arrow var-right" src="{{ asset('/img/arrow-right.png') }}" alt="pijl naar speelknop">
@@ -21,12 +26,19 @@
 			<input name="search" placeholder="zoek een spel" value="{{ request('search') }}">
 			<input type="submit" value="zoek">
 		</form>
-		<h1>
+		<h1 class="logo">
 			<a href="{{ route('overzicht') }}">
-				<p>GAME</p>
+				<span>GAME</span>
 				<span>changing</span>
+				<i>toevoegingen aan bestaande spelen</i>
 			</a>
 		</h1>
+		@if(session('message'))
+			<p class="message var-success">{{ session('message') }}</p>
+		@endif
+			@if($errors->has('suggestion'))
+				<p class="message var-error">{{ $errors->first('suggestion')}}</p>
+			@endif
 		@if(count($games)>0)
 			<ul>
 				@if(isset($popGame))
@@ -52,18 +64,11 @@
 		<form class="var-suggestion" action="{{ route('suggest') }}" method="post">
 			{{ csrf_field() }}
 			{{ method_field('PUT') }}
-			@if(Session::has('message'))
-				<label for="suggestion">{{ Session::get('message') }}</label>
-			@else
-				<label for="suggestion">Zit uw favoriete spel er niet bij?</label>
-			@endif
-
-			<input name="suggestion" id="suggestion" placeholder="" value="{{ old("suggestion") }}">
+			<label for="suggestion">Zit uw favoriete spel er niet bij?</label>
+			<input name="suggestion" id="suggestion" value="{{ old("suggestion") }}" required>
 			<input type="submit" value="vraag aan">
 
-			@if($errors->has('suggestion'))
-				<p class="error">{{ $errors->first('suggestion')}}</p>
-			@endif
+
 		</form>
 		<footer>
 			&copy; GAMEchanging 2017

@@ -9,9 +9,9 @@ body{
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 100%;
 
-	h1{
+	.logo{
+		-webkit-tap-highlight-color: transparent;
 		text-align: center;
-		$darken-logo: 30%;
 		color: darken($background-color,$darken);
 		text-shadow: -1px -1px 1px darken($background-color,$darken + 10%), 1px 1px 1px lighten($background-color,$lighten);
 		padding-top: 20px;
@@ -24,11 +24,13 @@ body{
 			}
 		}
 
-		p{
+		span:first-child{
+			display: block;
 			font-family: $pixel-font;
 			font-size: 1.5em;
 		}
-		span{
+
+		span:nth-child(2){
 			font-family: $writen-font;
 			font-size: 1.5em;
 			position: relative;
@@ -36,7 +38,63 @@ body{
 			left: 22px;
 		}
 
+		i{
+			display: block;
+			font-style: normal;
+			font-size: 1rem;
+			text-shadow: 0 0 1px lighten($background-color,$lighten);
+			color: darken($background-color,$darken + 10%);
+			position: relative;
+			bottom: 20px;
+		}
+
+		&.var-card{
+			padding: 50px 20px;
+			$background-color: #EBEBEB;
+			color: $background-color;
+			text-shadow: -1px -1px 1px darken($background-color,$darken), 1px 1px 1px lighten($background-color,$lighten);
+		}
+
+		&.var-overlay{
+			position: absolute;
+			top: 290px;
+			left: 0;
+			right: 0;
+			z-index: -1;
+			$background-color: white;
+			$darken: 15%;
+			$extra-factor: 60%;
+			color: darken($background-color,$darken);
+			text-shadow: -1px -1px 1px darken($background-color,$darken + $extra-factor), 1px 1px 1px lighten($background-color,$darken);
+
+			i{
+				text-shadow: 0 0 3px darken($background-color,$darken + $extra-factor);
+				color: darken($background-color,$darken);
+			}
+		}
 	}
+
+
+
+	.message{
+		padding: 15px;
+		margin: 15px 10px 40px;
+		border-radius: 3px;
+
+		&.var-success{
+			background: lighten($good-background,20%) !important;
+			color: black;
+			border: 1px solid $good-background;
+		}
+		&.var-error{
+			background: lighten($bad-background,35%) !important;
+			color: $bad-color;
+			border: 1px solid $bad-background;
+
+		}
+	}
+
+
 
 	#overlay{
 		position: absolute;
@@ -91,7 +149,7 @@ body{
 			}
 
 			&.var-right{
-				top: 105px;
+				top: 113px;
 			}
 		}
 		&.hide{
@@ -119,6 +177,7 @@ body{
 			input{
 				margin-left: 10px;
 				border-radius: 3px 0 0 3px;
+				width: 100%;
 			}
 
 			input[type=submit]{
@@ -127,16 +186,6 @@ body{
 				padding: 10px 15px 13px;
 				border-radius: 0 3px 3px 0;
 			}
-		}
-
-		p.error{
-			background: lighten($bad-background,35%);
-			color: $bad-color;
-			border: 1px solid $bad-background;
-			padding: 7px 10px;
-			margin: 15px 15px 0;
-			border-radius: 3px;
-			width: 100%;
 		}
 
 		label{
@@ -214,9 +263,9 @@ body{
 			background: none;
 
 			svg{
-				 width: 15px;
+				width: 15px;
 				height: 15px;
-			 }
+			}
 		}
 	}
 
@@ -268,27 +317,28 @@ body{
 		}
 	}
 	main{
-		span{
+		span#countDown{
 			font-family: $writen-font;
-			font-size: 4em;
+			font-size: 2em;
 			display: block;
 			text-align: center;
-			padding: 35px 0;
+			padding: 20px 0 0;
 			position: relative;
+			z-index: 0;
 
 			&::after{
 				content: "";
 				display: block;
-				width: 150px;
-				height: 150px;
+				width: 90px;
+				height: 90px;
 				position: absolute;
 				top:0;
 				right: 0;
 				left: 0;
 				margin:0 auto;
-				border: solid 1px gainsboro;
-				z-index: -1;
 				border-radius: 50%;
+				z-index: -1;
+				background: lighten($background-color,10%);
 			}
 		}
 		button{
@@ -296,17 +346,18 @@ body{
 			background: linear-gradient($accent-background,$accent-background);
 			border-radius: 0;
 			border: none;
-			font-size: 1.7em;
-			margin: 30px auto 10px;
+			font-size: 1.2em;
+			margin: 20px auto 10px;
 			display: block;
 			color: $accent-color;
 			padding:10px 40px 13px;
 			cursor: pointer;
 
 			&.var-sub{
-				font-size: 1.5em;
+				font-size: 1em;
 				background: lighten($accent-background,10%);
 				background: linear-gradient(lighten($accent-background,10%),lighten($accent-background,10%));
+				margin-top: 10px;
 			}
 		}
 
@@ -330,7 +381,9 @@ body{
 
 				.legend-item{
 					display: flex;
+					flex-wrap: wrap;
 					flex: 1;
+					justify-content: center;
 					padding: 0 10px;
 
 					.key{
@@ -367,10 +420,14 @@ body{
 					}
 					.description{
 						align-self: center;
-						padding-left: 10px;
+						padding: 0 10px 10px;
 						font-size: 1.2rem;
 					}
 				}
+			}
+			p{
+				font-size: 1.1rem;
+				padding-top: 10px;
 			}
 		}
 
@@ -388,19 +445,14 @@ body{
 			dialog{
 				display: block;
 				background:white;
-				width: 70%;
+				width: 85%;
 				max-width: 500px;
-				margin: 50px auto 0;
+				margin: 15px auto 0;
 				border: 10px solid gainsboro;
 				border-radius: 5px;
 				box-shadow: 0 0 15px darken($background-color,$darken + 10%);
-				position: absolute;
 				transition: all .5s ease;
 				transform: translateY(-50px);
-				top:0;
-				left: 0;
-				right: 0;
-				bottom: 115px;
 
 				&.var-good{
 					h2{
@@ -452,15 +504,14 @@ body{
 			}
 
 			button{
-				position: absolute;
 				bottom: 0;
 				text-align: center;
 				max-width: 520px;
-				width: 70%;
-				width: calc(70% + 20px);
+				width: 85%;
+				width: calc(85% + 20px);
 				right: 0;
 				left: 0;
-				margin: 30px auto;
+				margin: 20px auto;
 				padding-left: 50px;
 				padding-right: 50px;
 			}
@@ -528,4 +579,3 @@ body{
 		}
 	}
 }
-

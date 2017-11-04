@@ -2,16 +2,21 @@
 	<a href="{{ route('overzicht') }}" class="backButton">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
 		overzicht</a>
-	<h1>
-		<p>GAME</p>
+	<h1 class="logo">
+		<span>GAME</span>
 		<span>changing</span>
+		<i>toevoegingen aan bestaande spelen</i>
 	</h1>
 	<button id="mute"><img src="{{ asset('/img/audio-aan.svg') }}" alt="geluid aan"></button>
 </header>
 <main>
 	<div class="text-box">
+		<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}">{{ $start }}</span>
+		<button id="start">start de tijd</button>
+		<button id="won" class="var-sub">gewonnen</button>
 
-		<p>Begin het spel te spelen. Je krijgt een melding als er een wijziging is. Na elke kaart is het aan de volgende speler.</p>
+		<p>Start het echte spel te spelen</p>
+
 		@if($categories)
 			<div class="legend">
 				@foreach($categories as $category)
@@ -22,9 +27,7 @@
 			</div>
 		@endif
 	</div>
-	<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}" class="hidden">{{ $start }}</span>
-	<button id="won">gewonnen</button>
-	<button id="pause" class="var-sub">pipi pauze</button>
+
 	<div id="win">
 		<form action="{{ route('add_card',['game'=>$game->id]) }}" method="post">
 			{{ csrf_field() }}
@@ -39,9 +42,12 @@
 			<h2>Speel verder</h2>
 			<figure>
 				<figcaption>Speel rustig verder. En geniet van het originele spel.</figcaption>
-				<img src="{{ asset('/img/placeholder.png') }}" alt="">
+				<h1 class="logo var-card">
+					<span>GAME</span>
+					<span>changing</span>
+				</h1>
 			</figure>
 		</dialog>
-		<button id="read">doorgegeven</button>
+		<button id="read">volgende speler</button>
 	</div>
 </main>

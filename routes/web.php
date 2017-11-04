@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', 'GameController@index')->name('overzicht');
-Route::post('/', 'GameController@search')->name('search');
-Route::put('/','GameController@suggest')->name('suggest');
-Route::get('/promo', 'GameController@promo')->name('promo');
+Route::get('/game', 'GameController@index')->name('overzicht');
+Route::post('/game', 'GameController@search')->name('search');
+Route::put('/game','GameController@suggest')->name('suggest');
+Route::get('/', 'GameController@promo')->name('promo');
 
 Route::get('/game/{game}', 'GameController@play')->name('play');
 

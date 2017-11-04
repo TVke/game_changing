@@ -6,6 +6,7 @@ use GAMEchanging\Card;
 use GAMEchanging\Categorie;
 use GAMEchanging\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class GameController extends Controller
 {
@@ -46,19 +47,18 @@ class GameController extends Controller
 
         return response(
             view('play',compact(['min','max','start','game','categories'])))
-            ->cookie('gamechanging',$game->id, 3600
-        );
+            ->cookie('gamechanging',$game->id, 3600);
     }
 
     public function suggest(Request $request){
         
         $this->validate($request, [
-            'suggestion'   => 'required|unique:games,name|string|max:255',
+            'suggestion'   => 'required|string|max:255|unique:games,name',
         ]);
         
         Game::create(['name' => $request->suggestion]);
 
-        \Session::flash('message','Bedankt voor uw suggestie.');
+        Session::flash('message','Bedankt voor uw suggestie.');
         
         return redirect()->route('overzicht');
     }
