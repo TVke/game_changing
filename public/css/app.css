@@ -112,7 +112,7 @@ body {
           -ms-flex: 1;
               flex: 1;
       font-size: 1em;
-      padding: 7px 10px;
+      padding: 7px 15px;
       border: none;
       border-radius: 0; }
     body form input[type=submit] {
@@ -157,6 +157,20 @@ body {
                 flex: 0;
         border-radius: 0 3px 3px 0;
         cursor: pointer; }
+  body .backButton {
+    background: #fed46b;
+    padding: 10px;
+    margin: 5px 7px 3px;
+    display: inline-block;
+    color: black; }
+    body .backButton svg {
+      height: 10px;
+      width: 10px; }
+    body .backButton.var-search {
+      background: none; }
+      body .backButton.var-search svg {
+        width: 15px;
+        height: 15px; }
   body #oldPage > p {
     text-align: center;
     padding: 15px;

@@ -147,7 +147,7 @@ body{
 		input{
 			flex: 1;
 			font-size: 1em;
-			padding: 7px 10px;
+			padding: 7px 15px;
 			border: none;
 			border-radius: 0;
 		}
@@ -198,6 +198,28 @@ body{
 		}
 	}
 
+	.backButton{
+		background: lighten($background-color,$lighten);
+		padding:10px;
+		margin: 5px 7px 3px;
+		display: inline-block;
+		color: black;
+
+		svg{
+			height: 10px;
+			width: 10px;
+		}
+
+		&.var-search{
+			background: none;
+
+			svg{
+				 width: 15px;
+				height: 15px;
+			 }
+		}
+	}
+
 	#oldPage>p{
 		text-align: center;
 		padding: 15px;
@@ -216,6 +238,7 @@ body{
 	// play screeen
 
 	header{
+
 		a{
 			display: inline-block;
 			color: black;

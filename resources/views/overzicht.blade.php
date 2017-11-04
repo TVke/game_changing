@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 	<div id="oldPage">
-		@if(!isset($popGame))
+		@if($intro)
 			<div id="overlay">
 				<figure class="arrow-group">
 					<img class="arrow var-top" src="{{ asset('/img/arrow-up.png') }}" alt="pijl naar zoekbalk">
@@ -15,6 +15,9 @@
 		@endif
 		<form action="{{ route('search') }}" method="post">
 			{{ csrf_field() }}
+			@if(isset($search))
+				<a href="{{ route('overzicht') }}" class="backButton var-search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg></a>
+			@endif
 			<input name="search" placeholder="zoek een spel" value="{{ request('search') }}">
 			<input type="submit" value="zoek">
 		</form>
@@ -24,7 +27,7 @@
 				<span>changing</span>
 			</a>
 		</h1>
-		@if(!empty($games))
+		@if(count($games)>0)
 			<ul>
 				@if(isset($popGame))
 					<li>
@@ -43,7 +46,7 @@
 					</li>
 				@endforeach
 			</ul>
-			@else
+		@else
 			<p>We vonden niet het spel dat je zocht. Probeer iets anders te zoeken. </p>
 		@endif
 		<form class="var-suggestion" action="{{ route('suggest') }}" method="post">
