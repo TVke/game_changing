@@ -1,47 +1,51 @@
 <header>
-	<a href="{{ route('overzicht') }}">
+	<a href="{{ route('overzicht') }}" class="backButton">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
 		overzicht</a>
-	<h1>
-		<p>GAME</p>
+	<h1 class="logo">
+		<span>GAME</span>
 		<span>changing</span>
+		<i>Jij hebt het spel, wij de uitbreiding</i>
 	</h1>
 	<button id="mute"><img src="{{ asset('/img/audio-aan.svg') }}" alt="geluid aan"></button>
 </header>
 <main>
 	<div class="text-box">
+		<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}">{{ $start }}</span>
+		<button id="start" class="button">start de klok</button>
+		<a href="{{ route('win',['game'=>$game->name]) }}" id="won" class="button var-sub">gewonnen</a>
 
-		<p>Begin het spel te spelen. Je krijgt een melding als er een wijziging is. Na elke kaart is het aan de volgende speler.</p>
+		<ol class="list var-ordered">
+			<li><strong>Bereid alles voor</strong> om {{ strtolower($game->name) }} te spelen</li>
+			<li>druk op "start de klok" en <strong>begin te spelen</strong></li>
+			<li>er verschijnt een kaart voor speler 1</li>
+			<li>druk op volgende en <strong>speel verder met de regel</strong></li>
+			<li>herhaal stap 3-4 tot het einde</li>
+			<li>u won? druk op “gewonnen”</li>
+		</ol>
+
 		@if($categories)
-			<div class="legend">
+			<section class="legend">
+				<h2 class="heading-2">kaarttypes</h2>
 				@foreach($categories as $category)
 					<div class="legend-item">
 						<div class="key var-{{ $category->name }}"></div><span class="description">{{ $category->displayName }}</span>
 					</div>
 				@endforeach
-			</div>
+			</section>
 		@endif
-	</div>
-	<span id="countDown" data-min="{{ $min }}" data-max="{{ $max }}" class="hidden">{{ $start }}</span>
-	<button id="won">gewonnen</button>
-	<button id="pause" class="var-sub">pipi pauze</button>
-	<div id="win">
-		<form action="{{ route('add_card',['game'=>$game->id]) }}" method="post">
-			{{ csrf_field() }}
-			{{ method_field('PUT') }}
-			<label for="suggestion">Heb je zelf een leuke regel om toe te voegen?</label>
-			<input name="suggestion" id="suggestion">
-			<input type="submit" value="stel voor">
-		</form>
 	</div>
 	<div class="card">
 		<dialog>
 			<h2>Speel verder</h2>
 			<figure>
 				<figcaption>Speel rustig verder. En geniet van het originele spel.</figcaption>
-				<img src="{{ asset('/img/placeholder.png') }}" alt="">
+				<h1 class="logo var-card">
+					<span>GAME</span>
+					<span>changing</span>
+				</h1>
 			</figure>
 		</dialog>
-		<button id="read">doorgegeven</button>
+		<button id="read" class="button var-read">volgende speler</button>
 	</div>
 </main>
