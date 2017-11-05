@@ -177,7 +177,6 @@ body{
 			input{
 				margin-left: 10px;
 				border-radius: 3px 0 0 3px;
-				width: 100%;
 			}
 
 			input[type=submit]{
@@ -199,6 +198,7 @@ body{
 			padding: 7px 15px;
 			border: none;
 			border-radius: 0;
+			width: 50%;
 		}
 
 		input[type=submit]{
@@ -249,10 +249,11 @@ body{
 
 	.backButton{
 		background: lighten($background-color,$lighten);
-		padding:10px;
-		margin: 5px 7px 3px;
+		padding:12px;
+		margin: 10px;
 		display: inline-block;
 		color: black;
+		text-decoration: none;
 
 		svg{
 			height: 10px;
@@ -261,6 +262,8 @@ body{
 
 		&.var-search{
 			background: none;
+			margin: 5px 7px 3px;
+			padding: 10px;
 
 			svg{
 				width: 15px;
@@ -287,28 +290,15 @@ body{
 	// play screeen
 
 	header{
-
-		a{
-			display: inline-block;
-			color: black;
-			text-decoration: none;
-			padding:10px;
-			margin: 10px;
-			background: lighten($background-color,$lighten);
-
-			svg{
-				height: 10px;
-				width: 10px;
-			}
-		}
 		h1{
-			margin-top: 9px;
+			margin-top: 5px;
 		}
 		#mute{
-			padding: 10px 13px;
+			padding: 8px 12px;
 			margin: 10px;
 			background: lighten($background-color,$lighten);
-			border:1px solid black;
+			border: none;
+			//border:1px solid darken($background-color,$darken + 5%);
 			border-radius: 3px;
 			position: absolute;
 			top:0;
@@ -341,14 +331,15 @@ body{
 				background: lighten($background-color,10%);
 			}
 		}
-		button{
+		.button{
+			display: inline-block;
+			text-decoration: none;
 			background: $accent-background;
 			background: linear-gradient($accent-background,$accent-background);
 			border-radius: 0;
 			border: none;
 			font-size: 1.2em;
 			margin: 20px auto 10px;
-			display: block;
 			color: $accent-color;
 			padding:10px 40px 13px;
 			cursor: pointer;
@@ -358,6 +349,11 @@ body{
 				background: lighten($accent-background,10%);
 				background: linear-gradient(lighten($accent-background,10%),lighten($accent-background,10%));
 				margin-top: 10px;
+				padding: 10px 30px 13px;
+			}
+
+			&.var-read{
+				display: block;
 			}
 		}
 
@@ -365,7 +361,7 @@ body{
 			display: block;
 			background-color: white;
 			text-align: center;
-			margin: 10px auto 50px;
+			margin: 0 auto 50px;
 			width:70%;
 			min-width: 250px;
 			max-width: 500px;
@@ -373,11 +369,30 @@ body{
 			border-radius: 5px;
 			font-size: 1.4em;
 
+			.list{
+				font-size: 1rem;
+				padding-left: 30px;
+				text-align: left;
+				margin: 30px auto 0;
+				li{
+					padding-bottom: 5px;
+				}
+			}
+
 			.legend{
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-between;
 				margin-top: 30px;
+
+				.heading-2{
+					width: 100%;
+					display: block;
+					font-size: 1em;
+					border-bottom: 1px solid gainsboro;
+					padding-bottom: 5px;
+					margin-bottom: 15px;
+				}
 
 				.legend-item{
 					display: flex;
@@ -540,13 +555,11 @@ body{
 		left:0;
 		right: 0;
 		bottom: 0;
-		opacity: 1;
-		transition: all .5s ease-out;
+		transition: all .2s ease-in;
 
 		transform: translate(0);
 
 		&.hide{
-			opacity: 0;
 			transform: translate(100%);
 		}
 		&.show{
@@ -557,25 +570,23 @@ body{
 		display: none;
 	}
 
-	#win{
-		opacity: 0;
-		transition: all .5s ease;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left:0;
-		background: darken($background-color,20%);
-		pointer-events: none;
+	// win page
 
-		form{
+	.win{
+		//position: relative;
+
+		#confetti{
+			position: fixed;
+			top: 0;
+			left: 0;
 			width: 100%;
-			flex-wrap: wrap;
+			height: 100%;
+			z-index: -1;
 		}
 
-		&.win{
-			opacity: 1;
-			pointer-events: all;
+		.heading-1{
+			text-align: center;
+			padding: 50px 10px 20px;
 		}
 	}
 }

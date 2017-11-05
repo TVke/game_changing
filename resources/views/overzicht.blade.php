@@ -10,7 +10,7 @@
 				<h1 class="logo var-overlay">
 					<span>GAME</span>
 					<span>changing</span>
-					<i>toevoegingen voor bestaande spelen</i>
+					<i>Jij hebt het spel, wij de uitbreiding</i>
 				</h1>
 				<figure class="arrow-group var-right">
 					<figcaption class="arrow-description var-right">Hier kan je een spel beginnen spelen</figcaption>
@@ -30,15 +30,15 @@
 			<a href="{{ route('overzicht') }}">
 				<span>GAME</span>
 				<span>changing</span>
-				<i>toevoegingen aan bestaande spelen</i>
+				<i>Jij hebt het spel, wij de uitbreiding</i>
 			</a>
 		</h1>
 		@if(session('message'))
 			<p class="message var-success">{{ session('message') }}</p>
 		@endif
-			@if($errors->has('suggestion'))
-				<p class="message var-error">{{ $errors->first('suggestion')}}</p>
-			@endif
+		@if($errors->has('suggestion'))
+			<p class="message var-error">{{ $errors->first('suggestion')}}</p>
+		@endif
 		@if(count($games)>0)
 			<ul>
 				@if(isset($popGame))

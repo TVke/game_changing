@@ -63,6 +63,10 @@ class GameController extends Controller
         return redirect()->route('overzicht');
     }
 
+    public function win(Game $game){
+	    return view('win',compact('game'));
+    }
+
     public function promo(){
                
         return view('promo');

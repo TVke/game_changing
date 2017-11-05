@@ -54,6 +54,7 @@
 		(from.classList.contains(className))? from.classList.remove(className): null;
 	}
 
+
 	// Game enclosure
 	function LoadGame(game){ // loads the given game
 		var countDown = document.getElementById("countDown"),
@@ -63,14 +64,14 @@
 			pausedTimer = false,
 			mute = false,
 			notFirstClick = false,
-			wonButton = document.getElementById("won"),
+			// wonButton = document.getElementById("won"),
 			startButton = document.getElementById("start"),
 			card = document.getElementsByClassName("card")[0],
 			cardContent = document.getElementsByTagName("dialog")[0],
 			readButton = document.getElementById("read"),
 			audioButton = document.getElementById("mute"),
 			audioImage = audioButton.children[0],
-			winField = document.getElementById("win"),
+			// winField = document.getElementById("win"),
 			notification, timer;
 
 		// notification sound setup
@@ -88,24 +89,20 @@
 		startButton.addEventListener("click",function(e){
 			e.preventDefault();
 			if(notFirstClick){
-				startButton.innerHTML = (!pausedTimer)?"speel verder":"pipi pauze";
+				startButton.innerHTML = (!pausedTimer)?"speel verder":"pipipauze";
 				pausedTimer = (!pausedTimer);
 			}else{
 				startTimer();
-				startButton.innerHTML = "pipi pauze";
-
-				// !!!!!!!!!!!!!!!!!!!! play muted sound (safari fix) !!!!!!!!!!!!!!
-				// var promise = notification.play();
-				// if (promise !== undefined){promise.catch(function(e){}).then(function(){});}
+				startButton.innerHTML = "pipipauze";
 			}
 			notFirstClick=true;
 		});
 		//win button setup
-		wonButton.addEventListener("click",function(e){
-			e.preventDefault();
-			pausedTimer = true;
-			addClass("win",winField);
-		});
+		// wonButton.addEventListener("click",function(e){
+		// 	e.preventDefault();
+		// 	pausedTimer = true;
+		// 	addClass("win",winField);
+		// });
 		//read button setup
 		readButton.addEventListener("click",function(){
 			addnextTime(getRandomNumbreBetween(min, max));
