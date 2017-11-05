@@ -63,7 +63,7 @@
 
                         <h1 class="mb-5">
                             is de manier om je bordspellen nieuw leven in te blazen en plezier te beleven met de hele familie!</h1>
-                        <a href="/" class="btn btn-outline btn-xl js-scroll-trigger">Speel het nu!</a>
+                        <a href="<?= route('overzicht') ?>" class="btn btn-outline btn-xl js-scroll-trigger">Speel het nu!</a>
                     </div>
                 </div>
                 <div class="col-lg-5 my-auto">

@@ -15,7 +15,7 @@ class CategorieTableSeeder extends Seeder
             ['name'=>'neutral','displayName'=>'Neutraal'],
 		    ['name'=>'good','displayName'=>'Goed'],
 		    ['name'=>'bad','displayName'=>'Slecht'],
-		    ['name'=>'finisher','displayName'=>'Afmaker'],
+		    ['name'=>'finisher','displayName'=>'Slotkaart'],
 	    ]);
     }
 }

@@ -8,25 +8,62 @@ body {
   background: #fdc539;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%; }
-  body h1 {
+  body .logo {
+    -webkit-tap-highlight-color: transparent;
     text-align: center;
     color: #e7a602;
     text-shadow: -1px -1px 1px #b58202, 1px 1px 1px #fed46b;
     padding-top: 20px; }
-    body h1 a {
+    body .logo a {
       color: inherit;
       text-decoration: none; }
-      body h1 a:hover {
+      body .logo a:hover {
         color: #d89b02; }
-    body h1 p {
+    body .logo span:first-child {
+      display: block;
       font-family: "Press Start 2P", sans-serif;
       font-size: 1.5em; }
-    body h1 span {
+    body .logo span:nth-child(2) {
       font-family: "Sacramento", sans-serif;
       font-size: 1.5em;
       position: relative;
       bottom: 25px;
       left: 22px; }
+    body .logo i {
+      display: block;
+      font-style: normal;
+      font-size: 1rem;
+      text-shadow: 0 0 1px #fed46b;
+      color: #b58202;
+      position: relative;
+      bottom: 20px; }
+    body .logo.var-card {
+      padding: 50px 20px;
+      color: #EBEBEB;
+      text-shadow: -1px -1px 1px #c5c5c5, 1px 1px 1px white; }
+    body .logo.var-overlay {
+      position: absolute;
+      top: 290px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      color: #d9d9d9;
+      text-shadow: -1px -1px 1px #404040, 1px 1px 1px white; }
+      body .logo.var-overlay i {
+        text-shadow: 0 0 3px #404040;
+        color: #d9d9d9; }
+  body .message {
+    padding: 15px;
+    margin: 15px 10px 40px;
+    border-radius: 3px; }
+    body .message.var-success {
+      background: #73dc1e !important;
+      color: black;
+      border: 1px solid #448212; }
+    body .message.var-error {
+      background: #ff6752 !important;
+      color: white;
+      border: 1px solid #9E1400; }
   body #overlay {
     position: absolute;
     top: 0;
@@ -68,7 +105,7 @@ body {
               text-align: right;
               right: 100px; } }
       body #overlay .arrow-group.var-right {
-        top: 105px; }
+        top: 113px; }
     body #overlay.hide {
       display: none; }
     body #overlay::before {
@@ -96,14 +133,6 @@ body {
         margin-right: 10px;
         padding: 10px 15px 13px;
         border-radius: 0 3px 3px 0; }
-    body form p.error {
-      background: #ff6752;
-      color: white;
-      border: 1px solid #9E1400;
-      padding: 7px 10px;
-      margin: 15px 15px 0;
-      border-radius: 3px;
-      width: 100%; }
     body form label {
       width: 100%;
       padding: 20px 13px 5px; }
@@ -112,9 +141,10 @@ body {
           -ms-flex: 1;
               flex: 1;
       font-size: 1em;
-      padding: 7px 10px;
+      padding: 7px 15px;
       border: none;
-      border-radius: 0; }
+      border-radius: 0;
+      width: 50%; }
     body form input[type=submit] {
       -webkit-box-flex: 0;
           -ms-flex: 0;
@@ -157,6 +187,23 @@ body {
                 flex: 0;
         border-radius: 0 3px 3px 0;
         cursor: pointer; }
+  body .backButton {
+    background: #fed46b;
+    padding: 12px;
+    margin: 10px;
+    display: inline-block;
+    color: black;
+    text-decoration: none; }
+    body .backButton svg {
+      height: 10px;
+      width: 10px; }
+    body .backButton.var-search {
+      background: none;
+      margin: 5px 7px 3px;
+      padding: 10px; }
+      body .backButton.var-search svg {
+        width: 15px;
+        height: 15px; }
   body #oldPage > p {
     text-align: center;
     padding: 15px;
@@ -168,76 +215,79 @@ body {
     color: #694b01;
     text-align: center;
     padding: 30px 0 50px; }
-  body header a {
-    display: inline-block;
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    margin: 10px;
-    background: #fed46b; }
-    body header a svg {
-      height: 10px;
-      width: 10px; }
   body header h1 {
-    margin-top: 9px; }
+    margin-top: 5px; }
   body header #mute {
-    padding: 10px 13px;
+    padding: 8px 12px;
     margin: 10px;
     background: #fed46b;
-    border: 1px solid black;
+    border: none;
     border-radius: 3px;
     position: absolute;
     top: 0;
     right: 0;
     cursor: pointer; }
-  body main span {
+  body main span#countDown {
     font-family: "Sacramento", sans-serif;
-    font-size: 4em;
+    font-size: 2em;
     display: block;
     text-align: center;
-    padding: 35px 0;
-    position: relative; }
-    body main span::after {
+    padding: 20px 0 0;
+    position: relative;
+    z-index: 0; }
+    body main span#countDown::after {
       content: "";
       display: block;
-      width: 150px;
-      height: 150px;
+      width: 90px;
+      height: 90px;
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
       margin: 0 auto;
-      border: solid 1px gainsboro;
+      border-radius: 50%;
       z-index: -1;
-      border-radius: 50%; }
-  body main button {
+      background: #fed46b; }
+  body main .button {
+    display: inline-block;
+    text-decoration: none;
     background: #0C6699;
     background: -webkit-gradient(linear, left top, left bottom, from(#0C6699), to(#0C6699));
     background: linear-gradient(#0C6699, #0C6699);
     border-radius: 0;
     border: none;
-    font-size: 1.7em;
-    margin: 30px auto 10px;
-    display: block;
+    font-size: 1.2em;
+    margin: 20px auto 10px;
     color: white;
     padding: 10px 40px 13px;
     cursor: pointer; }
-    body main button.var-sub {
-      font-size: 1.5em;
+    body main .button.var-sub {
+      font-size: 1em;
       background: #1086c8;
       background: -webkit-gradient(linear, left top, left bottom, from(#1086c8), to(#1086c8));
-      background: linear-gradient(#1086c8, #1086c8); }
+      background: linear-gradient(#1086c8, #1086c8);
+      margin-top: 10px;
+      padding: 10px 30px 13px; }
+    body main .button.var-read {
+      display: block; }
   body main .text-box {
     display: block;
     background-color: white;
     text-align: center;
-    margin: 10px auto 50px;
+    margin: 0 auto 50px;
     width: 70%;
     min-width: 250px;
     max-width: 500px;
     padding: 20px;
     border-radius: 5px;
     font-size: 1.4em; }
+    body main .text-box .list {
+      font-size: 1rem;
+      padding-left: 30px;
+      text-align: left;
+      margin: 30px auto 0; }
+      body main .text-box .list li {
+        padding-bottom: 5px; }
     body main .text-box .legend {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -248,13 +298,25 @@ body {
           -ms-flex-pack: justify;
               justify-content: space-between;
       margin-top: 30px; }
+      body main .text-box .legend .heading-2 {
+        width: 100%;
+        display: block;
+        font-size: 1em;
+        border-bottom: 1px solid gainsboro;
+        padding-bottom: 5px;
+        margin-bottom: 15px; }
       body main .text-box .legend .legend-item {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         -webkit-box-flex: 1;
             -ms-flex: 1;
                 flex: 1;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         padding: 0 10px; }
         body main .text-box .legend .legend-item .key {
           display: block;
@@ -274,8 +336,11 @@ body {
         body main .text-box .legend .legend-item .description {
           -ms-flex-item-align: center;
               align-self: center;
-          padding-left: 10px;
+          padding: 0 10px 10px;
           font-size: 1.2rem; }
+    body main .text-box p {
+      font-size: 1.1rem;
+      padding-top: 10px; }
   body main .card {
     opacity: 0;
     -webkit-transition: all .5s ease;
@@ -290,22 +355,17 @@ body {
     body main .card dialog {
       display: block;
       background: white;
-      width: 70%;
+      width: 85%;
       max-width: 500px;
-      margin: 50px auto 0;
+      margin: 15px auto 0;
       border: 10px solid gainsboro;
       border-radius: 5px;
       -webkit-box-shadow: 0 0 15px #b58202;
               box-shadow: 0 0 15px #b58202;
-      position: absolute;
       -webkit-transition: all .5s ease;
       transition: all .5s ease;
       -webkit-transform: translateY(-50px);
-              transform: translateY(-50px);
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 115px; }
+              transform: translateY(-50px); }
       body main .card dialog.var-good h2 {
         background: repeating-linear-gradient(-45deg, #448212, #448212 4px, #509815 4px, #509815 8px);
         color: white; }
@@ -327,15 +387,14 @@ body {
         padding: 10px 20px;
         font-size: 1.3em; }
     body main .card button {
-      position: absolute;
       bottom: 0;
       text-align: center;
       max-width: 520px;
-      width: 70%;
-      width: calc(70% + 20px);
+      width: 85%;
+      width: calc(85% + 20px);
       right: 0;
       left: 0;
-      margin: 30px auto;
+      margin: 20px auto;
       padding-left: 50px;
       padding-right: 50px; }
     body main .card.show {
@@ -355,34 +414,24 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 1;
-    -webkit-transition: all .5s ease-out;
-    transition: all .5s ease-out;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
     -webkit-transform: translate(0);
             transform: translate(0); }
     body #nextPage.hide {
-      opacity: 0;
       -webkit-transform: translate(100%);
               transform: translate(100%); }
     body #nextPage.show {
       position: static; }
   body .hidden {
     display: none; }
-  body #win {
-    opacity: 0;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-    position: absolute;
+  body .win #confetti {
+    position: fixed;
     top: 0;
-    bottom: 0;
-    right: 0;
     left: 0;
-    background: #ce9402;
-    pointer-events: none; }
-    body #win form {
-      width: 100%;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-    body #win.win {
-      opacity: 1;
-      pointer-events: all; }
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  body .win .heading-1 {
+    text-align: center;
+    padding: 50px 10px 20px; }
