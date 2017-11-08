@@ -36,9 +36,6 @@
 		@if(session('message'))
 			<p class="message var-success">{{ session('message') }}</p>
 		@endif
-		@if($errors->has('suggestion'))
-			<p class="message var-error">{{ $errors->first('suggestion')}}</p>
-		@endif
 		@if(count($games)>0)
 			<ul>
 				@if(isset($popGame))
@@ -60,6 +57,9 @@
 			</ul>
 		@else
 			<p>We vonden niet het spel dat je zocht. Probeer iets anders te zoeken. </p>
+		@endif
+		@if($errors->has('suggestion'))
+			<p class="message var-error">{{ $errors->first('suggestion')}}</p>
 		@endif
 		<form class="var-suggestion" action="{{ route('suggest') }}" method="post">
 			{{ csrf_field() }}

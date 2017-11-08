@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
 {
-	protected $visible = ['categorie','title','description','image'];
+	protected $fillable = ['title','description','FK_game'];
 
     public function game()
     {
