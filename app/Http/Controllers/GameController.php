@@ -53,7 +53,7 @@ class GameController extends Controller
     public function suggest(Request $request){
         
         $this->validate($request, [
-            'suggestion'   => 'required|string|max:255|unique:games,name',
+            'suggestion' => 'required|string|max:255|unique:games,name',
         ]);
         
         Game::create(['name' => $request->suggestion]);
