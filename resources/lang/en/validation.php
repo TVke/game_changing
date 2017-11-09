@@ -104,7 +104,7 @@ return [
             'required'  => 'Gelieve het veld in te vullen.',
             'string'    => 'Gelieve een geldige input in te geven',
             'max'       => 'Uw suggestie is te lang.',
-            'unique'    => 'Uw seggestie is al eens toegevoed en in verwerking.',
+            'unique'    => 'Uw suggestie bestaat al of is in verwerking.',
         ],
     ],
 

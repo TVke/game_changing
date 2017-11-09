@@ -19,89 +19,26 @@ class CardsController extends Controller
 		return $chosenCard;
 	}
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function store(Request $request)
     {
-	    //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        $this->validate($request, [
+            'suggestion'   => 'required|string|max:255',
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, Game $game)
-    {
-        // $this->validate($request, [
-        //     'suggestion'   => 'required|string|max:255',
-        // ]);
+        Card::create([
+            'title' => 'Gebruikersvraag',
+            'description' => $request->suggestion,
+            'FK_game' => $request->game,
+        ]);
 
-        return 'test';
+        \Session::flash('message','Bedankt voor uw suggestie.');
         
-        // Game::create(['name' => $request->suggestion]);
-
-        // \Session::flash('message','Bedankt voor uw suggestie.');
-        
-        // return redirect()->route('overzicht');
+        return redirect()->route('overzicht');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function redirect()
+    {        
+        return redirect()->route('overzicht');
     }
 }
