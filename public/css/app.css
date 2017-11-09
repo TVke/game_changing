@@ -262,6 +262,8 @@ body {
     padding: 10px 40px 13px;
     cursor: pointer; }
     body main .button.var-sub {
+      display: block;
+      width: 105px;
       font-size: 1em;
       background: #1086c8;
       background: -webkit-gradient(linear, left top, left bottom, from(#1086c8), to(#1086c8));
@@ -270,6 +272,8 @@ body {
       padding: 10px 30px 13px; }
     body main .button.var-read {
       display: block; }
+  body main .icon h1 {
+    display: none; }
   body main .text-box {
     display: block;
     background-color: white;
@@ -341,14 +345,17 @@ body {
     body main .text-box p {
       font-size: 1.1rem;
       padding-top: 10px; }
+    body main .text-box.hide {
+      display: none; }
   body main .card {
     opacity: 0;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
     pointer-events: none;
     position: absolute;
+    height: 100vh;
     top: 0;
-    bottom: 0;
+    bottom: -50px;
     right: 0;
     left: 0;
     background: #e7a602; }
@@ -382,7 +389,11 @@ body {
         margin-bottom: 10px; }
       body main .card dialog figure img {
         display: block;
-        width: 100%; }
+        max-width: 80%;
+        max-width: calc(100% - 40px);
+        max-height: 250px;
+        margin: 0 auto;
+        padding: 20px; }
       body main .card dialog figure figcaption {
         padding: 10px 20px;
         font-size: 1.3em; }
