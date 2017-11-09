@@ -16,7 +16,7 @@
 			{{ csrf_field() }}
 			{{ method_field('PUT') }}
 			<label for="suggestion">Een leuke regel om toe te voegen?</label>
-			<input name="suggestion" id="suggestion">
+			<input name="suggestion" id="suggestion" required>
 			<input type="submit" value="stel voor">
 		</form>
 	</div>

@@ -372,7 +372,8 @@ body {
       -webkit-transition: all .5s ease;
       transition: all .5s ease;
       -webkit-transform: translateY(-50px);
-              transform: translateY(-50px); }
+              transform: translateY(-50px);
+      position: static; }
       body main .card dialog.var-good h2 {
         background: repeating-linear-gradient(-45deg, #448212, #448212 4px, #509815 4px, #509815 8px);
         color: white; }
