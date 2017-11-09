@@ -9,10 +9,17 @@
 
 	// click event intro overlay
 	if(overlay){
-		overlay.addEventListener("click",function(e){
-			e.preventDefault();
-			addClass("hide",this);
-		});
+		if(document.cookie.search("intro") > 0){
+			addClass("hide",overlay);
+		}else{
+			overlay.addEventListener("click",function(e){
+				e.preventDefault();
+				if(document.cookie.search("intro") <= 0){
+					document.cookie = "intro=seen";
+				}
+				addClass("hide",this);
+			});
+		}
 	}
 
 	// EventListener for every game
@@ -64,14 +71,13 @@
 			pausedTimer = false,
 			mute = false,
 			notFirstClick = false,
-			// wonButton = document.getElementById("won"),
 			startButton = document.getElementById("start"),
+			infoBox = document.getElementsByClassName("text-box")[0],
 			card = document.getElementsByClassName("card")[0],
 			cardContent = document.getElementsByTagName("dialog")[0],
 			readButton = document.getElementById("read"),
 			audioButton = document.getElementById("mute"),
 			audioImage = audioButton.children[0],
-			// winField = document.getElementById("win"),
 			notification, timer;
 
 		// notification sound setup
@@ -93,21 +99,17 @@
 				pausedTimer = (!pausedTimer);
 			}else{
 				startTimer();
+				fetchNewCard();
 				startButton.innerHTML = "pipipauze";
 			}
 			notFirstClick=true;
 		});
-		//win button setup
-		// wonButton.addEventListener("click",function(e){
-		// 	e.preventDefault();
-		// 	pausedTimer = true;
-		// 	addClass("win",winField);
-		// });
 		//read button setup
 		readButton.addEventListener("click",function(){
 			addnextTime(getRandomNumbreBetween(min, max));
 			card.classList.remove("show");
 			resetAudio(notification);
+			removeClass("hide",infoBox);
 		});
 		//mute button setup
 		audioButton.addEventListener("click",function(){
@@ -118,8 +120,12 @@
 
 		// only after card is hidden then fetch new card data
 		card.addEventListener("transitionend",function(e){
+			if(e.target.classList.contains("card") && e.target.classList.contains("show")){
+				addClass("hide",infoBox);
+			}
 			if(e.target.classList.contains("card") && !e.target.classList.contains("show")){
 				fetchNewCard();
+
 			}
 		});
 
@@ -156,8 +162,11 @@
 			cardContent.getElementsByTagName("h2")[0].innerHTML = title;
 			cardContent.getElementsByTagName("figcaption")[0].innerHTML = description;
 			if(image !== null){
-				cardContent.getElementsByTagName("img")[0].src = "/img/"+image;
+				addClass("icon",cardContent.getElementsByTagName("figure")[0]);
+				cardContent.getElementsByTagName("img")[0].src = "/img/icons/"+image;
 				cardContent.getElementsByTagName("img")[0].alt = title;
+			}else{
+				removeClass("icon",cardContent.getElementsByTagName("figure")[0]);
 			}
 		}
 

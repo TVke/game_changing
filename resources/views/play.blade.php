@@ -44,6 +44,7 @@
 					<span>GAME</span>
 					<span>changing</span>
 				</h1>
+				<img src="" alt="">
 			</figure>
 		</dialog>
 		<button id="read" class="button var-read">volgende speler</button>
