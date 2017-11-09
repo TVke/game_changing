@@ -29,12 +29,14 @@ class CardsController extends Controller
         Card::create([
             'title' => 'Gebruikersvraag',
             'description' => $request->suggestion,
-            'FK_game' => $request->game,
+            'FK_game' => $request->id,
         ]);
 
         \Session::flash('message','Bedankt voor uw suggestie.');
+
+        $game = $request->name;
         
-        return redirect()->route('overzicht');
+        return redirect()->back();
     }
 
     public function redirect()

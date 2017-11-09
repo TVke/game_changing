@@ -18,9 +18,7 @@ Route::post('/game', 'GameController@search')->name('search');
 Route::put('/game','GameController@suggest')->name('suggest');
 
 Route::get('/win/{game}', 'GameController@win')->name('win');
+Route::put('/win/','CardsController@store')->name('add_card');
 
 Route::get('/game/{game}', 'GameController@play')->name('play');
 Route::get('/new/card/{game}', 'CardsController@randomOne');
-
-Route::put('/add/card/','CardsController@store')->name('add_card');
-Route::get('/add/card/','CardsController@redirect');
