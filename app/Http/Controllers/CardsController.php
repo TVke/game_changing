@@ -8,11 +8,7 @@ use Illuminate\Http\Request;
 
 class CardsController extends Controller
 {
-	/**
-	 * fetches one random card.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
+
 	public function randomOne(Game $game)
 	{
 		$chosenCard = Card::where("FK_game", $game->id)->with('categorie')->inRandomOrder()->first();
