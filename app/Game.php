@@ -11,6 +11,6 @@ class Game extends Model
 	
     public function card()
     {
-        return $this->hasMany(Card::class,'FK_game');
+        return $this->hasMany(Card::class,'id','FK_game');
     }
 }
