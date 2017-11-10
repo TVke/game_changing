@@ -12,11 +12,11 @@ class Card extends Model
 
     public function game()
     {
-        return $this->belongsTo(Game::class,'FK_game');
+        return $this->belongsTo(Game::class,'FK_game','id');
     }
 
     public function categorie()
     {
-        return $this->belongsTo(Categorie::class,'FK_categorie');
+        return $this->hasOne(Categorie::class,'id','FK_categorie');
     }
 }
