@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categorie extends Model
 {
-	protected $visible = ['categorie'];
+	protected $visible = ['name'];
 
 	public function card(){
 		return $this->belongsTo(Card::class,'FK_categorie','id');

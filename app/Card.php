@@ -17,6 +17,6 @@ class Card extends Model
 
     public function categorie()
     {
-        return $this->hasOne(Categorie::class,'id','FK_categorie');
+    	return $this->belongsTo(Categorie::class,'FK_categorie');
     }
 }

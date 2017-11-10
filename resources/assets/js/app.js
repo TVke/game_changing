@@ -150,7 +150,6 @@
 				if(this.readyState === 4 && this.status === 200){
 					var response = (xhttp.responseText)?JSON.parse(xhttp.responseText):null;
 					if (response){
-						console.log(response);
 						fillCard(response.categorie.name,response.title,response.description,response.image);
 					}
 				}};
