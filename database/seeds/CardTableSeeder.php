@@ -32,12 +32,12 @@ class CardTableSeeder extends Seeder
             ['title'=>'Dikke pech','description'=>'In de volgende 2 beurten geen paar genomen? Geef dan een paar aan je tegenstander.','image'=>'volgendepaartegenstander.png','FK_game'=>'1','FK_categorie'=>'3','approved'=>1,],
 
             #Vier op een rij
-            ['title'=>'2 voor de prijs van 1','description'=>'Je mag twee schijven steken deze beurt.','image'=>null,'FK_game'=>'2','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Geheugenverlies','description'=>'Sla een beurt over.','image'=>null,'FK_game'=>'2','FK_categorie'=>'3','approved'=>1,],
-            ['title'=>'Delen?','description'=>'Je mag de schijf van je tegenstander zijn beurt zelf plaatsen.','image'=>null,'FK_game'=>'2','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Valsspelen','description'=>'Als vier schijven met dezelfde kleur in contact staan heb je gewonnen. Ze moeten niet in een rij staan.','image'=>null,'FK_game'=>'2','FK_categorie'=>'4','approved'=>1,],
-            ['title'=>'Tijd terugspoelen!','description'=>'Haal de laatst geplaatste schijf eruit.','image'=>null,'FK_game'=>'2','FK_categorie'=>'1','approved'=>1,],
-            ['title'=>'Wisselen','description'=>'Wissel van kleur!','image'=>null,'FK_game'=>'2','FK_categorie'=>'1','approved'=>1,],
+            ['title'=>'2 voor de prijs van 1','description'=>'Je mag twee schijven steken deze beurt.','image'=>'2schijven4oprij.png','FK_game'=>'2','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Geheugenverlies','description'=>'Sla een beurt over.','image'=>'skipturn.png','FK_game'=>'2','FK_categorie'=>'3','approved'=>1,],
+            ['title'=>'Delen?','description'=>'Je mag de schijf van je tegenstander zijn beurt zelf plaatsen.','image'=>'4oprijafgeven.png','FK_game'=>'2','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Valsspelen','description'=>'Als vier schijven met dezelfde kleur in contact staan (niet diagonaal) heb je gewonnen. Ze moeten niet in een rij staan.','image'=>'4oprijcontact.png','FK_game'=>'2','FK_categorie'=>'4','approved'=>1,],
+            ['title'=>'Tijd terugspoelen!','description'=>'Haal de laatst geplaatste schijf eruit.','image'=>'4oprijrewind.png','FK_game'=>'2','FK_categorie'=>'1','approved'=>1,],
+            ['title'=>'Wisselen','description'=>'Wissel van kleur voor de rest van het spel!','image'=>'4oprijwissel.png','FK_game'=>'2','FK_categorie'=>'1','approved'=>1,],
 
             #Monopoly
             ['title'=>'Donatie','description'=>'Krijg 100 euro van de bank!','image'=>'100.png','FK_game'=>'3','FK_categorie'=>'2','approved'=>1,],
