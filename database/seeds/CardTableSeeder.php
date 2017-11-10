@@ -40,19 +40,19 @@ class CardTableSeeder extends Seeder
             ['title'=>'Wisselen','description'=>'Wissel van kleur!','image'=>null,'FK_game'=>'3','FK_categorie'=>'1','approved'=>1,],
 
             #Monopoly
-            ['title'=>'Donatie','description'=>'Krijg 100 euro!','image'=>null,'FK_game'=>'3','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Uitzetting','description'=>'Je mag een huis van je tegenstander nemen.','image'=>null,'FK_game'=>'3','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>null,'FK_game'=>'3','FK_categorie'=>'3','approved'=>1,],
+            ['title'=>'Donatie','description'=>'Krijg 100 euro van de bank!','image'=>'100.png','FK_game'=>'3','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Uitzetting','description'=>'Je mag een huis van je tegenstander nemen dat op het veld ligt.','image'=>'huisafgeven.png','FK_game'=>'3','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>'skipturn.png','FK_game'=>'3','FK_categorie'=>'3','approved'=>1,],
 
             #Dammen
-            ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van de tegenstander.','image'=>null,'FK_game'=>'4','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Jouw beurt?','description'=>'Verplaats een schijf van de tegenstander.','image'=>null,'FK_game'=>'4','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>null,'FK_game'=>'4','FK_categorie'=>'3','approved'=>1,],
+            ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van de tegenstander.','image'=>'verwijderdam.png','FK_game'=>'4','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Jouw beurt?','description'=>'Verplaats een schijf van de tegenstander.','image'=>'verplaatsdam.png','FK_game'=>'4','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>'skipturn.png','FK_game'=>'4','FK_categorie'=>'3','approved'=>1,],
 
             #Schaken
-            ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van je tegenstander.','image'=>null,'FK_game'=>'5','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Jouw beurt?','description'=>'Verplaats een schijf van je tegenstander.','image'=>null,'FK_game'=>'5','FK_categorie'=>'2','approved'=>1,],
-            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>null,'FK_game'=>'5','FK_categorie'=>'3','approved'=>1,],
+            ['title'=>'Je slag slaan','description'=>'Verwijder een schijf van je tegenstander.','image'=>'verwijder.png','FK_game'=>'5','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Jouw beurt?','description'=>'Verplaats een schijf van je tegenstander.','image'=>'verplaats.png','FK_game'=>'5','FK_categorie'=>'2','approved'=>1,],
+            ['title'=>'Overslaan','description'=>'Sla een beurt over.','image'=>'skipturn.png','FK_game'=>'5','FK_categorie'=>'3','approved'=>1,],
 
 	    ]);
     }
